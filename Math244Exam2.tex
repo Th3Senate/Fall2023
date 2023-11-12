@@ -1,0 +1,1135 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{xcolor}
+
+\title{MATH244 Exam 2}
+\author{Christopher La Valle}
+\date{November 2023}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Random Variables} 
+
+\textbf{\color{blue}Random  Variable}: A random variable $X$ is a function from the outcome space to the real numbers.
+
+$$X:\Omega\rightarrow\mathbb{R}$$
+
+\noindent\textbf{\color{blue}Range}: The range of a random variable $X$, often denoted $Range(X)$ or $R_X$, is the set of possible values of $X$.
+
+\noindent\textbf{\color{blue}Discrete Random Variable}: A random variable with a countable range.
+
+\noindent\textbf{\color{blue}Continuous Random Variable}: A random variable with an uncountable range.
+
+\noindent\textbf{\color{orange}Random Variables in Terms of Events}: For a random variable $X$, a real number $x$, and a set $B\subseteq\mathbb{R}$, we write
+
+$$\{X=x\}:=\{\omega\in\Omega:\ X(\omega)=x\}$$
+
+$$\{X\in B\}:=\{\omega\in\Omega:\ X(\omega)\in B\}$$
+
+and when we have a probability $P$ on $\Omega$, we further abbreviate:
+
+$$P(X=x):=P(\{X=x\}),\qquad P(X\in B):=P(\{X\in B\})$$
+
+\section{Probability Mass Functions}
+
+
+\noindent\textbf{\color{blue}Probability Mass Function (PMF)}: Let $X$ be a discrete random variable with range $R_x$. The function
+
+$$f_X(x)=P(X=x)\ \text{for each}\ x\in R_x$$
+
+\noindent is called the probability mass function of $X$.
+
+\begin{enumerate}
+    \item $0\le P(X=x)\le1$ for all $x$;
+    \item $\underset{x\in R_X}{\sum}P(X=x)=1$;
+    \item for any set $B\subseteq R_x$, $P(X\in B)=\underset{x\in B}{\sum}P(X=x)$.
+\end{enumerate}
+
+\noindent\textbf{\color{orange}Functions of Random Variables}: If $W$ is a random variable and $X=g(W)$, then $X$ is also a random variable where
+
+$$R_X=\{g(w):w\in R_W\}$$
+
+and
+
+$$f_X(x)=\underset{w:g(x)=x}{\sum}f_w(w)$$
+
+\noindent\textbf{\color{blue}Joint Probability Mass Function}: The joint probability mass function of two discrete random variables $X$ and $Y$ is defined as
+
+$$f_{XY}(x,y)=P(X=x,Y=y)=P(x,y)$$
+
+with $P(x,y)\ge0$ and $\underset{(x,y)}{\sum}P(x,y)=1$.
+
+\noindent\textbf{\color{blue}Joint Range}: The joint range for random variables $X$ and $Y$ is given by
+
+$$R_{XY}=\{(x,y)|P(X=x,Y=y)>0\}$$
+
+\noindent\textbf{\color{blue}Marginal Probability Mass Function}: If we know the joint PMF of two random variables $X$ and $Y$, we can also obtain the individual distributions of $X$ with respect to $Y$ and vice versa:
+
+$$P(X=x)=\underset{y_j\in R_Y}{\sum}P(X=x,Y=y_j),\ \text{for any}\ x\in R_x$$
+
+$$P(Y=y)=\underset{x_i\in R_X}{\sum}P(X=x_i,Y=y),\ \text{for any}\ y\in R_Y$$
+
+\noindent\textbf{\color{red}Identical Distribution}: Random variables have the same or identical distribution if $X$ and $Y$ have the same range, and for every value $v$ in this range,
+
+$$P(X=v)=P(Y=v)$$
+
+\noindent\textbf{\color{red}Change of Variable Principle}: If $X$ has the same distribution as $Y$, then any statement about $X$ has the same probability as the corresponding statement about $Y$, and $g(X)$ has the distribution as $g(Y)$, for any function $g$.
+
+\noindent\textbf{\color{red}Equal Random Variables}: Random variables $X$ and $Y$ are equal, written $X=Y$, if $P(X=Y)=1$.
+
+\noindent\textbf{\color{orange}Probabilities of Events Determined by Two Random Variables}: The probability that $X$ and $Y$ satisfy some conditions is the sum of $P(X=x, Y=y)=P(x,y)$ over all pairs $(x,y)$ satisfying that condition.
+
+\noindent\textbf{\color{orange}Functions of Two Random Variables}: Let $X$, $Y$ be two random variables, and suppose that $Z=g(X,Y)$, where $g:\mathbb{R}^2\rightarrow\mathbb{R}$. Then,
+
+$$P(Z=z)=\underset{(x_i,y_j)\in A_z}{\sum}P(X=x_i, Y=y_j)$$
+
+where 
+
+$$A_z=\{(x_i,y_j)\in R_{XY}:g(x_i,y_j)=z\}$$
+
+\noindent\textbf{\color{blue}Conditional Distributions}: For any event $A$ and any random variable $Y$, the collection of conditional probabilities
+
+$$P(Y\in B|A)=\frac{P[(Y\in B)\cap A]}{P(A)}$$
+
+defines the probability distribution as $B$ varies over subsets of the range of $Y$. This distribution is called the conditional distribution of $Y$ given $A$. 
+
+If $Y$ is discrete, the conditional distribution of $Y$ given $A$ is specified by the conditional probabilities
+
+$$P(Y=y|A)\quad\text{for}\ y\in R_Y$$
+
+\noindent\textbf{\color{blue}Conditional PMF of $Y$ given $A$}: For a discrete random variable $Y$ and event $A$, the conditional PMF of $Y$ given $A$ is defined as 
+
+$$P(Y=y|A)=\frac{P[(Y=y)\cap A]}{P(A)}\qquad\text{for any }y\in R_Y$$
+
+\noindent\textbf{\color{red}Multiplication Rule}: If the marginal (unconditional) distribution of $X$ is known, together with the conditional distribution of $Y$ given $X=x$ for all possible values $x$ of $X$, the joint distribution of $X$ and $Y$ is found using by
+
+$$P(X=x,Y=y)=P(X=x)P(Y=y,X=x)$$
+
+\noindent\textbf{\color{blue}Independent Random Variables}: Two random variables $X$ and $Y$ are independent if and only if for all intervals $A$, $B\subseteq\mathbb{R}$,
+
+$$P(X\in A,Y\in B)=P(X\in A)P(Y\in B)$$
+
+\noindent\textbf{\color{red}Theorem for Independent Random Variables}: If $X$ and $Y$ are discrete random variables, they are independent iff 
+
+$$P(X=x,Y=y)=P(X=x)P(Y=y)\quad\text{for all}\ x,y\in\mathbb{R}$$
+
+\section{Expectation}
+
+\textbf{\color{blue}Expectation}: The expectation (also called the expected value or mean) of a random variable $X$, is the mean of the distribution of $X$, denoted denoted and defined by
+
+$$E(X)=\underset{x\in R_X}{\sum}x\cdot P(X=x)$$
+
+\noindent\textbf{\color{blue}Mean}: The average of all possible values of $X$ weighted by their probabilities.
+
+\noindent\textbf{\color{blue}Mode}: The most likely value of $X$ (there may be more than one).
+
+\noindent\textbf{\color{blue}Median}: A number $m$ such that $P(X\le m)$ and $P(X\ge m)$ are at least $\frac{1}{2}$ (there may be more than one).
+
+Note: If the distribution of $X$ is symmetric about some point $m$, and has a single mode, the three quantities are equal to $m$.
+
+\noindent\textbf{\color{orange}Expectation of a Function of $X$}: Typically, $E[g(x)]\ne g[E(X)]$. Rather
+
+$$E[g(X)]=\underset{x\in R_x}{\sum}g(x)P(X=x)$$
+
+\noindent\textbf{\color{blue}$k$-th Moment of $X$}: For $g(x)=x^k$ with $k=1,2,\ldots$, the number
+
+$$E(X^k)=\underset{x\in R_X}{\sum}x^kP(X=x)$$
+
+derived from the distribution of $X$ is called the $k$-th moment of $X$.
+If $a$ and $b$ are constants, then
+
+\noindent\textbf{\color{red}Properties of Expectation}:
+
+\begin{itemize}
+    \item $E(aX+b)=aE(X)+B$
+    \item $E(aX)=aE(X)$
+    \item $E(b)=b$
+    \item If $X$ and $Y$ are two discrete random variables, then
+$$E[g(X,Y)]=\underset{(x,y)\in R_{XY}}{\sum}g(x,y)\cdot P(X=x,Y=y)$$
+    \item If $X$ and $Y$ are independent, then
+$$E(XY)=E(X)E(Y)$$
+\end{itemize}
+
+\noindent\textbf{\color{red}Addition Rule}: If $X$ and $Y$ are jointly distributed random variables such that $E(X)<\infty$ and $E(Y)<\infty$
+
+$$E(X+Y)=E(X)+E(Y)$$
+
+no matter whether $X$ and $Y$ are independent or not. Consequently, for a sequence of random variables $X_1,\ldots,X_n$ such that $E(X_i)<\infty$ for $i=1,\ldots,n$
+
+$$E(X_1+\ldots+X_n)=E(X_1)+\ldots+E(X_n)$$
+
+\noindent\textbf{\color{blue}Indicator Random Variables}: If $A$ is an event, the indicator of $A$ is the random variable $I_A$ such that 
+
+$$I_A(\omega)=\begin{cases}1&\omega\in A\\0&\omega\in A^C\end{cases}$$
+
+\noindent\textbf{\color{orange}Method of Indicators}: Simplifies calculations of the expectation of a counting variable $X$ that counts the number of events that occur in some list of $n$ events, say $A_1,\ldots,A_n$.
+
+\begin{itemize}
+    \item Write $X$ as a sum of indicators,
+    $$X=I_1+\ldots+I_n$$
+    where $I_j$ is the indicator of $A_j$.
+    \item Calculate the expectation of $X$ as
+    $$E(X)=E(I_1+\ldots+I_n)$$
+    $$E(I_1)+\ldots+E(I_n)$$
+    $$P(A_1)+\ldots+P(A_n)$$
+\end{itemize}
+
+\noindent\textbf{\color{red}Tail Sum Formula}: For $X$ with possible values $\{0,1,\ldots,n\}$:
+
+$$E(X)=\underset{j=1}{\overset{n}{\sum}}P(X\ge j)$$
+
+\noindent\textbf{\color{red}Markov's Inequality}: If $X\ge0$, then
+
+$$P(X\ge a)\le\frac{E(X)}{a}$$
+
+for every $a>0$.
+
+\section{Standard Deviation and Variance}
+
+\noindent\textbf{\color{blue}Varaince and Standard Deviation}: The variance of $X$, denoted $Var(X)$, is the mean squared deviation of $X$ from its expected value $\mu=E(X)$;
+
+$$Var(X)=E[(X-\mu)^2]$$
+
+$$Var(X)=E(X^2)-[E(X)]^2$$
+
+The standard deviation of $X$, denoted $SD(X)$, is the square root of the variance of $X$:
+
+$$SD(X)=\sqrt{Var(X)}$$
+
+\noindent\textbf{\color{red}Scaling and Shifting}: For a random variable $X$ and real numbers $a$ and $b$,
+
+$$Var(aX+b)=a^2Var(X)$$
+ 
+$$SD(aX+b)=|a|SD(X)$$
+
+\noindent\textbf{\color{blue}Standardization}: If a random variable $X$ has $E(X)=\mu$ and $SD(X)=\sigma>0$, the random variable
+
+$$X^*=\frac{X-\mu}{\sigma}$$
+ 
+is called $X$ in standard units or standardization of $X$ has $E(X^*)=0$ and $SD(X^*)=1$. Positive values of $X^*$ correspond to higher than expected values of $X$; negative values of $X^*$ correspond to lower than expected values of $X$. Any event determined by the value of $X$ can be rewritten in terms of $X^*$
+ 
+$$P(X\le b)=P(\frac{X-\mu}{\sigma}\le\frac{b-\mu}{\sigma})=P(X^*\le\frac{b-\mu}{\sigma})$$
+ 
+\noindent\textbf{\color{red}Chebychev's Inequality}: For any random variable $X$ with $E(X)=\mu$ and $SD(X)=\sigma$, and any $k>0$,
+
+$$P(|X-\mu|\ge k\sigma)\le\frac{1}{k^2}$$
+
+\noindent\textbf{\color{red}Addition Rule for Variances}:$Var(X_1+\ldots+X_n)=Var(X_1)+\ldots+Var(X_n)$ if $X_1,\ldots,X_n$ are independent.
+
+\noindent\textbf{\color{red}Square Root Law}: Let $S_n$ be the sum, $\bar{X}_n=\frac{S_n}{n}$ the average, of $n$ independent random variables $X_1,\ldots,X_n$ each with the same distribution as $X$. Then,
+
+$$E(S_n)=nE(X)\qquad\text{and}\qquad SD(S_n)=\sqrt{n}SD(X)$$
+
+$$E(\bar{X}_n)=E(X)\qquad\text{and}\qquad SD(\bar{X}_n)=\frac{SD(X)}{\sqrt{n}}$$
+ 
+\noindent\textbf{\color{red}Law of Averages/Weak Law of Large Numbers}: Let $X_1,X_2,\ldots$ be a sequence of independent random variables with the same distribution as $X$. Let $\mu=E(X)$ denote the common expected value of $X_i$, and let
+
+$$\bar{X}_n=\frac{X_1+X_2+\ldots+X_n}{n}$$
+
+be the random variable representing the average of $X_1,\ldots,X_n$. Then for every $\epsilon>0$, no matter how small,
+
+$$P(|\bar{X}_n-\mu|<\epsilon)\rightarrow1\quad\text{as}\ n\rightarrow\infty$$
+
+\noindent\textbf{\color{red}Normal Approximation (Central Limit Theorem)}: Let $S_n=X_1+\ldots+X_n$ be the sum of $n$ independent random variables each with the same distribution over some finite set of values. For large $n$, the distribution of $S_n$ is approximately normal, with mean $E(S_n)=n\mu$, and standard deviation $SD(S_n)=\sigma\sqrt{n}$, where $\mu=E(X_i)$ and $\sigma=SD(X_i)$. For all $a\le b$
+
+$$P(a\le\frac{S_n-n\mu}{\sigma\sqrt{n}}\le b)\approx\Phi(b)-\Phi(a)$$
+
+\section{Homework 6}
+
+\noindent\textbf{Problem 1}:
+
+Let $X$ and $Y$ be two discrete random variables with $R_X=\{1,2,3\}$ and $R_Y=\{2,4,6\}$ and the following joint distribution:
+
+\begin{center}
+    \begin{tabular}{ | c | c | c | c | }
+        \hline
+        &$Y=2$ & $Y=4$ & $Y=6$ \\ 
+        \hline
+        $X=1$&$0.04$&$0.08$&$0.04$\\
+        \hline
+        $X=2$&$0.2$&$0.08$&$0.125$\\
+        \hline
+        $X=3$&$0.25$&$0.125$&$c$\\
+        \hline
+    \end{tabular}
+\end{center}
+
+\indent a. Find the value of $c$.
+
+{\color{blue}
+
+Since $X$ and $Y$ form a joint PMF, $\underset{(x,y)}{\sum}P(x,y)=1$. 
+
+$$0.04+0.08+0.04+0.2+0.08+0.125+0.25+0.125+c=1$$
+
+$$c=0.06$$
+}
+
+\indent b. Find the marginal distribution of $X$.
+
+{\color{blue}
+
+\begin{center}
+    \begin{tabular}{ |c|c|c|c| }
+        \hline
+        $X$&$X=1$ & $X=2$ & $X=3$ \\ 
+        \hline
+        $P(X=x)$&$0.16$&$0.405$&$0.435$\\
+        \hline
+    \end{tabular}
+\end{center}
+
+}
+
+\indent c. Find $P(X>Y)$.
+
+{\color{blue}
+
+$$P(X>Y)=0.25$$
+
+}
+
+\indent d. Find $P(X\le2,Y\le4)$.
+
+{\color{blue}
+
+$$P(X\le2,Y\le4)=0.04+0.08+0.2+0.08=0.4$$
+
+}
+
+\indent e. Find $P(Y=2|X=2)$.
+
+{\color{blue}
+
+Using the marginal distribution, 
+
+$$P(X=2)=0.405$$
+
+Then, 
+
+$$P(Y=2,X=2)=0.2$$
+
+Lastly,
+
+$$P(Y=2|X=2)=\frac{0.2}{0.405}=0.49$$
+
+}
+
+\indent f. Are $X$ and $Y$ independent? Justify your answer.
+
+We must show that $P(X=x,Y=y)=P(X=x)P(Y=y)$.
+
+\noindent\textbf{Problem 2}: 
+
+A fair coin is tossed three times. Let $X$ be the number of heads on the first two tosses, and let $Y$ be the number of heads on the last two tosses.
+
+\indent\indent a. Make a table showing the joint distribution of $X$ and $Y$.
+
+{\color{blue}
+
+\begin{center}
+    \begin{tabular} { |c|c|c|c||c|}
+        \hline
+        &$Y=0$&$Y=1$&$Y=2$&$\sum$\\
+        \hline
+        $X=0$&$\frac{1}{8}$&$\frac{1}{8}$&$0$&$\frac{1}{4}$\\
+        \hline
+        $X=1$&$\frac{1}{8}$&$\frac{2}{8}$&$\frac{1}{8}$&$\frac{1}{2}$\\
+        \hline
+        $X=2$&$0$&$\frac{1}{8}$&$\frac{1}{8}$&$\frac{1}{4}$\\
+        \hline
+        \hline
+        $\sum$<&$\frac{1}{4}$&$\frac{1}{2}$&$\frac{1}{4}$&$1$\\
+        \hline
+    \end{tabular}
+\end{center}
+
+}
+
+\indent\indent b. Are $X$ and $Y$ independent? Justify your answer.
+
+{\color{blue}
+
+No, $X$ and $Y$ are not independent. For example, $P(X=0,Y=0)=\frac{1}{8}$, but $P(X=0)P(Y=0)=\frac{1}{4}\cdot\frac{1}{4}=\frac{1}{16}$.
+
+}
+
+\indent\indent c. Find the distribution of $X+Y$.
+
+{\color{blue}
+
+Let $Z=X+Y$. Then,
+
+\begin{center}
+    \begin{tabular} { |c|c|c|c|c|c|}
+        \hline
+        $z$&$0$&$1$&$2$&$3$&$4$\\
+        \hline
+        $P(Z=z)$&$\frac{1}{8}$&$\frac{1}{4}$&$\frac{1}{4}$&$\frac{1}{4}$&$\frac{1}{8}$\\
+        \hline
+    \end{tabular}
+\end{center}
+
+}
+
+\noindent\textbf{Problem 3}:
+
+Suppose a box contains tickets, each labeled by an integer. Let $X$ and $Y$ be the results of draws at random with replacement from the box: Show that, no matter what the distribution of numbers in the box,
+
+$$P(X+Y\ \text{is even})\ge\frac{1}{2}$$
+
+{\color{blue}
+$X+Y$ is even iff $X$ and $Y$ are even or they are both odd. If the fraction of odd numbered tickets is $p$ and the fraction of even numbered tickets is $(1-p)$, this implies that
+
+$$P(X+Y\ \text{is even})\underbrace{p^2}_{\text{both odd}}+\underbrace{(1-p)^2}_{\text{both even}}$$
+
+If $f(p)=p^2+(1-p)^2=1-2p+p^2=2p^2-2p+1$, then $f'(p)=4p-2$, which is increasing in $p$ and has a root at $\frac{1}{2}$, so the minimum value of $f$ is $f\left(\frac{1}{2}\right)=2\cdot\left(\frac{1}{2}\right)^2-2\cdot(\frac{1}{2})+1=\frac{1}{2}$. Thus, $P(X+Y\ \text{is even})\ge\frac{1}{2}$ in all cases.
+
+}
+
+\noindent\textbf{Problem 4}:
+
+Let $X$ and $Y$ be independent, each uniformly distributed on $\{1,2,\ldots,n\}$. Find:
+
+\indent\indent a. $P(X=Y)$;
+
+{\color{blue}
+
+$X=Y$ occurs when $X=Y=1$, $X=Y=2$, $X=Y=4$, $\ldots$. Therefore, 
+
+
+\begin{align*}
+P(X=Y)&=\underset{i=1}{\overset{n}{\sum}}P(X=i, Y=i)\\
+&=\underset{i=1}{\overset{n}{\sum}}P(X=i)\cdot P(Y=i)\ \text{by independence}\\
+&=\underset{i=1}{\overset{n}{\sum}}\frac{1}{n}\cdot\frac{1}{n}=n\cdot\frac{1}{n^2}=\frac{1}{n}
+\end{align*}
+
+
+}
+
+\indent\indent b. $P(X<Y)$;
+
+{\color{blue}
+
+
+\begin{align*}
+P(X<Y)&=\underset{i=1}{\overset{n}{\sum}}P(X=i,Y>i)\\
+&=\underset{i=1}{\overset{n}{\sum}}P(X=i)\cdot P(Y>i)\ \text{by independence}\\
+&=\underset{i=1}{\overset{n}{\sum}}\frac{1}{n}\cdot\frac{(n-1)}{n}\\
+&=\underset{i=1}{\overset{n}{\sum}}\frac{(n-1)}{n^2}=\frac{n-1}{2n}
+\end{align*}
+
+
+}
+
+\indent\indent c. $P(X>Y)$;
+
+{\color{blue}
+
+$X$ and $Y$ have the same distribution. Thus, $P(Y<X)=P(X<Y)=\frac{n-1}{2n}$.
+
+}
+
+\indent\indent d. $P(max(X,Y)=k)$ for $1\le k\le n$;
+
+{\color{blue}
+
+\begin{align*}
+    P(max(X,Y)=k)&=P(X=Y=k)+P(X=k,Y<k)+P(Y=k,X<k)\\
+    &=P(X=k)P(Y=k)+P(X=k)P(Y<k)+P(Y=k)P(X<k)\ \text{by independence}\\
+    &=\frac{1}{n}\cdot\frac{1}{n}+\frac{1}{n}\cdot\frac{k-1}{n}\\
+    &+\frac{1}{n}\cdot\frac{k-1}{n}\\
+    &=\frac{1+(k-1)+(k-1)}{n^2}=\frac{2k-1}{n^2}
+\end{align*}
+
+}
+
+\indent\indent e. $P(min(X,Y)=k)$ for $1\le k\le n$;
+
+{\color{blue}
+
+
+\begin{align*}
+    P(max(X,Y)=k)&=P(X=Y=k)+P(X=k,Y>k)+P(Y=k,X>k)\\
+    &=P(X=k)P(Y=k)+P(X=k)P(Y>k)+P(Y=k)P(X>k)\ \text{by independence}\\
+    &=\frac{1}{n}\cdot\frac{1}{n}+\frac{1}{n}\cdot\frac{n-k}{n}\\
+    &+\frac{1}{n}\cdot\frac{n-k}{n}\\
+    &=\frac{1+(n-k)+(n-k)}{n^2}=\frac{2n-2k+1}{n^2}
+\end{align*}
+
+
+}
+
+\indent\indent f. $P(X+Y=k)$ for $2\le k\le 2n$;
+
+{\color{blue}
+
+For $k=2,\ldots,k+1$, we have
+
+
+\begin{align*}
+P(X+Y=k)&=\underset{i=1}{\overset{k-1}{\sum}}P(X=i,Y=k-i)\\
+    &=\underset{i=1}{\overset{k-1}{\sum}}P(X=i)P(Y=k-i)\ \text{by independence}\\
+    &=\underset{i=1}{\overset{k-1}{\sum}}\frac{1}{n}\cdot\frac{1}{n}=(k-1)\cdot\frac{1}{n^2}=\frac{k-1}{n^2}\\
+\end{align*}
+
+
+For $n+2\le k\le 2n$, we have
+
+
+\begin{align*}
+    P(X+Y=k)&=\underset{i=k-n}{\overset{n}{\sum}}P(X=i,Y=k)
+\end{align*}
+
+}
+
+\section{Homework 7}
+
+\noindent\textbf{Problem 1}:
+
+What is the expected number of sixes appearing on three rolls? What is the expected number of odd numbers? 
+
+{\color{blue}
+
+Let $X$ denote the number of sixes appearing on three die rolls. Then, $X\sim Binomial(3,\frac{1}{6})$, and thus $E(X)=3\cdot\frac{1}{6}=\frac{1}{2}$. Similarly, let $Y$ denote the number of odd numbers appearing on three die rolls. Then, $Y\sim Binomial(3,\frac{1}{2})$, and $E(Y)=3\cdot\frac{1}{2}=\frac{3}{2}$.
+
+}
+
+\noindent\textbf{Problem 2}: 
+
+Suppose all the numbers in a list of $100$ numbers are nonnegative, and that the average of the numbers in the list is $2$. Prove that at most $25$ numbers in the list are greater than $8$.
+
+{\color{blue}
+
+We use Markov's inequality. Let $X$ be a number drawn at random from the list. We know $E(X)=2$. Hence,
+
+$$P(X>8)\le\frac{E(X)}{8}=\frac{2}{8}=\frac{1}{4}$$
+
+so at most $\frac{1}{4}$ of the $100$ numbers, i.e., $25$ of the numbers in the list, can be greater than $8$.
+
+}
+
+\noindent\textbf{Problem 3}: 
+
+Suppose $E(X^2)=3$, $E(Y^2)=4$, $E(XY)=2$. Find $E[(X+Y)^2]$.
+
+{\color{blue}
+
+$$E[(X+Y)^2]=E[X^2+2XY+Y^2]=E[X^2]+2E[XY]+E[Y^2]=3+2\cdot2+3=11$$
+
+}
+
+\noindent\textbf{Problem 4}:
+
+Let $X$ and $Y$ be two independent indicator random variables, with $P(X=1)=p$ and $P(Y=1)=r$. Find $E[(X-Y)^2]$ in terms of $p$ and $r$. 
+
+{\color{blue}
+
+Since $X$ and $Y$ are indicator random variables, we have $E(X)=E(X^2)=p$ and $E(Y)=E(Y^2)=r$. Thus,
+
+\begin{align*}
+    E[(X-Y)^2]&=E[X^2-2XY+Y^2]\\
+    &=E[X^2]-2E[X]E[Y]+E[Y^2]\\
+\end{align*}
+
+(by linearity of the expectation and the fact that $X$ and $Y$ are independent)
+
+\begin{align*}
+    &=p-2pr+r
+\end{align*}
+
+}
+
+\noindent\textbf{Problem 5}:
+
+{\color{blue}
+
+A building has $10$ floors above the basement. If $12$ people get into an elevator at the basement, and each chooses a floor at random to get out, independently of the others, how many floors do you expect the elevator to make a stop to let out one or more of these $12$ people?
+
+Let $X$ be the number of floors at which at least one person wants to get out. We want to find $E(X)$, but computing $P(X=x)$ for $x=1,2,\ldots,10$ is difficult. However, we not need the distribution of $X$. Instead, consider the indicator random variable
+
+$$I_j=\begin{cases}1&\text{if at least one person watns to get out at floor}\ j\\0&\text{otherwise}\end{cases}$$
+
+Then, $X=\underset{j=1}{\overset{10}{\sum}}I_j$. The expected value of an indicator function is the probaiblity of the set on which the indicator is $1$. Thus,
+
+$$E(X)=E(\underset{j=1}{\overset{10}{\sum}}I_j)=\underset{j=1}{\overset{10}{E(I_j)}}=\underset{j=1}{\overset{10}{\sum}}\left[1-\left(\frac{9}{10}\right)\right]\approx7.176$$
+
+}
+
+\noindent\textbf{Problem 6}:
+
+An insurance company sells a one-year automobile policy with a deductible of $2$. The probability that the insured will incur a loss of $0.05$. If there is a loss, the probability of a loss amount $N$, is $\frac{K}{N}$, for $N=1,\ldots,5$ and $K$ a constant. These are the only possible loss amounts and no more than one loss can occur.
+
+\indent\indent a. Determine the value of $K$;
+
+{\color{blue}
+
+To find $K$, we use the fact that the total probability is $1$, i.e.,
+
+\begin{gather*}
+    1=\frac{K}{1}+\frac{K}{2}+\frac{K}{3}+\frac{K}{4}+\frac{K}{5}\\
+    \Leftrightarrow1=\frac{137K}{60}\\
+    \Leftrightarrow K=\frac{60}{137}
+\end{gather*}
+
+}
+
+\indent\indent b. Calculate the expected payment for this policy.
+
+Since the deductible is $2$, the insured will recieve no payment if the loss amount is $1$ or $2$. If the loss amount is $3$, they will receive a payment of $3-2=1$, if the loss amount is $4$, they will recieve a payment of $4-2=2$, and if the loss amount is $5$, they will recieve a payment of $5-2=3$. Thus,
+
+after applying the deductible, the expected payment is 
+
+\begin{align*}
+    0.05\cdot[1\cdot P(N=3)+2\cdot P(N=4)+3\cdot P(N=5)]\\
+    =0.05\cdot\left[1\cdot\frac{60}{137\cdot3}+2\cdot\frac{60}{137\cdot4}+3\cdot\frac{60}{137\cdot5}\right]\\
+    =\frac{43}{1370}\approx0.0314
+\end{align*}
+
+\noindent\textbf{Problem 7}:
+
+\indent\indent a. You want to invent a gambling game in which a person rolls two dice and is paid some money if the sum is $7$, but otherwise lose their mone . How much sould you pay for winning a $\$1$ bet if you want this to be a fair game, that is, for the amount won by the gambler to have expectation $0$?
+
+{\color{blue}
+
+Let $X$ be the winnings, and let $x$ be the amount that you pay for a win on a $\$1$ bet. We want $E(X)=0$, so
+
+\begin{align*}
+    E(X)&=1\cdot P(\text{one six})+2\cdot P(\text{two sixes})+3\cdot P(\text{Three sixes})\\
+    &+(-1)\cdot P(\text{no six})\\
+    &=1\cdot\left[\begin{pmatrix}3\\1\end{pmatrix}\left(\frac{1}{6}\right)^{1}\left(\frac{5}{6}\right)^2\right]+2\cdot\left[\begin{pmatrix}3\\2\end{pmatrix}\left(\frac{1}{6}\right)^{2}\left(\frac{5}{6}\right)^1\right]\\
+    &+3\cdot\left[\begin{pmatrix}3\\3\end{pmatrix}\left(\frac{1}{6}\right)^{3}\left(\frac{5}{6}\right)^0\right]+(-1)\cdot\left[\begin{pmatrix}3\\0\end{pmatrix}\left(\frac{1}{6}\right)^{0}\left(\frac{5}{6}\right)^3\right]\\
+    &=\frac{25}{72}+\frac{5}{36}+\frac{1}{72}-\frac{125}{216}=-\frac{17}{216}
+\end{align*}
+
+}
+
+\section{Homework 8}
+
+\noindent\textbf{Problem 1}:
+
+Let $X$ be a discrete random variable with $R_X=\{0,1,2,3\}$ and the following distribution
+
+\begin{center}
+    \begin{tabular}{ |c|c|c|c|c| }
+        \hline
+        $x$&$0$&$1$&$2$&$3$\\
+        \hline
+        $P(X=x)$&$0.1$&$0.4$&$0.3$&$0.2$\\
+        \hline
+    \end{tabular}
+\end{center}
+
+\indent\indent a. Calculate $E(X)$;
+
+{\color{blue}
+
+$$E(X)=0\cdot0.1+1\cdot0.4+2\cdot0.3+3\cdot0.2=1.6$$
+
+}
+
+\indent\indent b. Calculate $Var(X)$;
+
+{\color{blue}
+
+First, calculate $E(X^2)=0^2\cdot0.1+1^2\cdot0.4+2^2\cdot0.3+3^2\cdot0.2=3.4$. Then, $Var(X)=E(x^2)-[E(X)]^2=3.4-(1.6)^2=0.84$.
+
+}
+
+\indent\indent c. Let $Y=(X-2)^2$. Calculate $E(Y)$;
+
+{\color{blue}
+
+$$E(Y)=E\left[(X-2)^2\right]=(0-2)^2\cdot0.1+(1-2)^2\cdot0.4+(2-2)^2\cdot0.4+(3-2)^2\cdot0.2$$
+
+$$4\cdot0.1+1\cdot0.4+0\cdot0.3+1cdot0.2=1$$
+
+}
+
+\noindent\textbf{Problem 2}:
+
+Suppose the IQ scores of a million individuals have a mean of $100$ and a $SD$ of $10$. 
+
+\indent\indent a. Without making any further assumptions about the distribution of the scores, find an upper bound on the number of scores exceeding $130$.
+
+{\color{blue}
+
+Let $X$ denote the IQ score. Then, using Chebychev's inequality we have
+
+$$P(X\ge130)=P(X-100\ge30)=P(X-\mu\ge3\sigma)\le P(|X-\mu|\ge3\sigma)\le\frac{1}{9}$$
+
+Thus, among the $1$ million individuals, there are at most $111112$ scores exceeding $130$.
+
+}
+
+\indent\indent b. Find a smaller upper bound on the scores exceeding $130$ assuming the distirbution of scores is symmetric about $100$.
+
+{\color{blue}
+
+Assuming the distribution is symmetric about $100$, one half of the number calculated in a. will be to the left of $100$, and the other half will be to the right of $100$. THus, there at most $\frac{111112}{2}=55556$ scores exceeding $130$.
+
+}
+
+\indent\indent c. Estimate the number of scores exceeding $130$ assuming that the distribution is approximately normal.
+
+{\color{blue}
+
+Assuming that the distribution is approximately normal, we have
+
+$$P(X\ge130)=1-P(X\le130)\approx1-\Phi(\frac{130-100}{10})$$
+
+$$=1-\Phi(3)=1-0.9987=0.0013$$
+
+Thus, the number of scores exceeding $130$ is at most $1300$.
+
+}
+
+\noindent\textbf{Problem 3}:
+
+An airport purchases an insurance policy to offset costs associated with excessive amounts of snowfall. For every full ten inches of now in excess of $40$ inches during the winter season, the insurer pays the airport $300$ up to a policy maximum of $700$.
+
+The following table shows the probability function for the random variable $X$ of annual (winter season) snowfall, in inches, at the airport
+
+\begin{center}
+    \begin{tabular}{ |c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Inches&$[0,20)$&$[20,30)$&$[30,40)$&$[40,50)$&$[50,60)$&$[60,70)$&$[70,80)$&$[80,90)$&$[90,\infty)$\\
+        \hline
+        Probability&$0.06$&$0.018$&$0.26$&$0.22$&$0.14$&$0.06$&$0.04$&$0.04$&$0.00$\\
+        \hline
+    \end{tabular}
+\end{center}
+
+Calculate the standard deviation of the amount paid under the policy (round to the nearest integer value).
+
+{\color{blue}
+
+Let $X$ denote the amount paid under the policy. We first calculate $E(X)$ and $E(X^2)$.
+
+$$E(X)=0\cdot(0.06+0.18+0.26+0.22)+300\cdot0.14+600\cdot0.06+700\cdot(0.04+0.04)=134$$
+
+$$E(X^2)=0^2\cdot(0.06+0.18+0.26+0.22)+300^2\cdot0.14$$
+
+$$+600^2\cdot0.06+700^2\cdot(0.04+0.04)=73400$$
+
+Thus,
+
+$$Var(X)=E(X^2)-[E(X)]^2=73400-134^2=5544$$
+
+$$SD(X)=\sqrt{55444}\approx235$$
+
+}
+
+\noindent\textbf{Problem 4}:
+
+The claim, $X$, for a dental insurance policy is a random vairable with the following probability function:
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        $x$&$0$&$1$&$2$\\
+        \hline
+        $P(X=x)$&$0.5$&$0.2$&$0.3$\\
+        \hline
+    \end{tabular}
+\end{center}
+
+The premium for the policy is equal to $125\%$ of the expected claim amount.
+
+Calculate the approximate probability that the total calims on $76$ independent policies exceed the total premium collected.
+
+{\color{blue}
+
+First, let $X$ denote the claim amount. Then,
+
+$$E(X)=0\cdot0.5+1\cdot0.2+2\cdot0.3=0.8$$
+
+$$E(X^2)=0^2\cdot0.5+1^2\cdot0.2+2^2\cdot0.3=1.4$$
+
+$$Var(X)=E(X^2)-[E(X)]^2=1.4-0.64=0.76$$
+
+The premium on a policy is $125\%$ of $0.8$, which is $1$. Thus, the total premium on $76$ policies is $76$. Now, let $Y$ be the total claims on $76$ policies. By the central limit theorem, $Y$ has approximately a normal distirubtion with mean $76\cdot0.8=60.8$ and variance $76\cdot0.76=57.76$. Hence,
+
+$$P(Y>76)\approx1-\Phi(\frac{76-60.8}{\sqrt{57.76}})=1-\Phi(2)=1-0.9772=0.0228$$
+
+}
+
+\noindent\textbf{Problem 5}:
+
+Let $X$ and $Y$ be two independent random variables. Suppose we know that $var(2X-Y)=6$ and $Var(X+2Y)=9$. Find $Var(X)$ and $Var(Y)$.
+
+{\color{blue}
+
+By independence we have
+
+$$6=Var(2X-Y)=Var(2X)+Var(-Y)=4Var(X)+Var(Y)$$
+
+$$9=Var(X+2Y)=Var(X)+Var(2Y)=Var(X)+4Var(Y)$$
+
+By solving for $Var(X)$ and $Var(Y)$, we obtain $Var(X)=1$ and $Var(Y)=2$.
+
+}
+
+\noindent\textbf{Problem 6}:
+
+let $X$, $Y$, and $Z$ be independent indentically distributed random variables with mean $1$ and variance $2$. Calculate
+
+\indent\indent a. $E(2X+3Y)$;
+
+{\color{blue}
+
+$$E(2X+3Y)=E(2X)+E(3Y)=2E(X)+3E(Y)=5$$
+
+}
+
+\indent\indent b. $Var(2X+3Y)$;
+
+{\color{blue}
+
+Using the fact that $X$, $Y$, and $Z$ are independent, we have
+
+$$Var(2X+3Y)=Var(2X)+Var(3Y)=4Var(X)+YVar(Y)=26$$
+
+}
+
+\indent\indent c. $E(XYZ)$;
+
+{\color{blue}
+
+Using the fact that $X$, $Y$, and $Z$ are independent, we have
+
+$$E(XYZ)=E(X)E(Y)E(Z)=1$$
+
+}
+
+\indent\indent d. $Var(XYZ)$.
+
+{\color{blue}
+
+\begin{align*}
+    Var(XYZ)&=E(X^2Y^2Z^2)-[E(XYZ)]^2\\
+    &=E(X^2)E(Y^2)E(Z^2)-[E(X)E(Y)E(Z)]^2\ \text{by independence}\\
+    &=E(X^2)E(Y^2)E(Z^2)-[E(X)]^2[E(Y)]^2[E(Z)]^2\\
+    &=(Var(X)+[E(X)]^2)(Var(Y)+[E(Y)]^2)(Var(Y)+[E(Y)]^2)\\
+    &-[E(X)]^2[E(Y)]^2[E(Z)]^2\\
+    &=(2+1)^3-1^3=26
+\end{align*}
+
+}
+
+\noindent\textbf{Problem 7}:
+
+\indent\indent a. Show that if $X$ and $Y$ are independent random variables, then
+
+$$Var(X-Y)=Var(X+Y)$$
+
+{\color{blue}
+
+By the addition rule for the variance of independent random variables, we have
+
+\begin{align*}
+    Var(X-Y)&=Var(X+(-Y))=Var(X)+Var(-Y)\\
+    &=Var(X)+(-1)^2Var(Y)=Var(X)+Var(Y)=Var(X+Y)
+\end{align*}
+
+}
+
+\indent\indent b. Let $D_1$ and $D_2$ represent two draws at random with replacement from a population, with $E(D_1)=10$ and $SD(D_1)=2$. Find a number $c$ so that
+
+$$P(|D_1-D_2|<c)\ge99\%$$
+
+{\color{blue}
+
+Let $X=D_1-D_2$. Since $D_1$ and $D_2$ are two draws at random with replacement from the same population, they are independent and identically distributed. Thus, $E(X)=E(D_1-D_2)=E(D_1)-E(D_2)=10-10=0$, and $Var(X)=Var(D_1-D_2)=Var(D_1)+Var(D_2)=4+4=8$. Now,
+
+\begin{align*}
+    P(|D_1-D_2|<c)\ge0.99&\\
+    &\Leftrightarrow1-P(|D_1-D_2|\ge c)\ge0.99\\
+    &\Leftrightarrow P(|D_1-D_2|\ge c)\ge0.01\\
+    &\Leftrightarrow P(|X-0|\ge c)\ge0.99\\
+\end{align*}
+
+Using Chebychev's inequality this can be expressed as
+
+$$P(|X-0|\ge k\sqrt{8})\le\frac{1}{k^2}$$
+
+with $k=10$. Thus, $c=10\sqrt{8}$.
+
+}
+
+\section{Quiz 4}
+
+\noindent\textbf{Problem 1}:
+
+The parameters of the Binomial distribution are:
+
+\begin{itemize}
+    \item {\color{blue}sample size and probability of success}
+    \item mean and standard deviation
+    \item mean and number of successes
+    \item sample size and number of successes
+\end{itemize}
+
+\noindent\textbf{Problem 2}:
+
+The parameters of the Normal distribution are:
+
+\begin{itemize}
+    \item {\color{blue}expectation and variance}
+    \item sample size and probability of success
+    \item variance and number of successes
+    \item expectation and probability of success
+\end{itemize}
+
+\noindent\textbf{For the next three problems}: Let $S$ be the number of successes in $2500$ independent trials with probability $\frac{1}{1000}$ of success on each trial. Let $m$ be the most likely value of $S$.
+
+\noindent\textbf{Problem 3}: 
+
+Find $m$.
+
+{\color{blue}
+
+The number $m$ is the mode of the $Binomial(2500, 0.001)$ distribution. As $(n+1)p=2501\cdot0.001=2.501$ is a non-integer, we have
+
+$$m=\lfloor(n+1)p\rfloor=\lfloor2.501\rfloor=2$$
+
+}
+
+\noindent\textbf{Problem 4}:
+
+The exact probability of $P(S=2)$ is 
+
+\begin{itemize}
+    \item {\color{blue}$\begin{pmatrix}2500\\2\end{pmatrix}\cdot0.001^2\cdot0.999^{1498}$}
+    \item $\underset{k=0}{\overset{2}{\sum}}\begin{pmatrix}2500\\k\end{pmatrix}\cdot0.001^k\cdot0.999^{2500-k}$
+    \item $10\underset{k=0}{\overset{1}{\sum}}\begin{pmatrix}2500\\k\end{pmatrix}\cdot0.001^k\cdot0.999^{2500-k}$
+\end{itemize}
+
+\noindent\textbf{Problem 5}:
+
+Find the Poisson approimation for $P(S=2)$ and enter your answer as a decimal number (round appropriately).
+
+{\color{blue}
+
+Using $\mu=np=2500\cdot0.001=2.5$, we get
+
+$$P(S=2)\approx\frac{e^{-2.5}(2.5)^2}{2!}\approx0.2565$$
+
+}
+
+\section{Quiz 5}
+
+\noindent\textbf{Problem 1}:
+
+Let $X$ be a discrete random variable with $R_X=\{1,2,3,4\}$ and the following distribution:
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        $x$&$1$&$2$&$3$&$4$\\
+        \hline
+        $P(X=x)$&$\frac{1(a-1)}{20}$&$\frac{2(a-2)}{20}$&$\frac{3(a-3)}{20}$&$\frac{4(a-4)}{20}$\\
+        \hline
+    \end{tabular}
+\end{center}
+
+Determine the value of $a$.
+
+{\color{blue}
+
+We need 
+
+$$\frac{a-1}{20}+\frac{2a-4}{20}+\frac{3a-9}{20}+\frac{4a-16}{20}=1$$
+
+$$\Leftrightarrow\frac{10a-30}{20}=1$$
+
+$$\Leftrightarrow10a=50$$
+
+$$\Leftrightarrow a=5$$
+
+}
+
+\noindent\textbf{Problem 2}:
+
+Suppose that $X$ and $Y$ are two discrete random variables with
+
+$$R_{XY}=\{(1,1),(1,2),(2,1),(2,2)\}$$
+
+and the following joint probability distribution:
+
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        &$Y=1$&$Y=2$\\
+        \hline
+        $X=1$&$0.2$&$0.45$\\
+        \hline
+        $X=2$&$0.3$&$0.05$\\
+        \hline
+    \end{tabular}
+\end{center}
+
+Decide with of the following is true:
+
+\begin{itemize}
+    \item {\color{blue}$X$ and $Y$ are not independent.}
+    \item $X$ and $Y$ are independent.
+\end{itemize}
+
+\noindent\textbf{Problem 3}:
+
+Two fair dice are rolled. Let $X$ be the number on first die and let $Y$ be the number on the second die.
+
+\indent\indent a. Find $P(X=4,Y=6)$ and enter your answer as a fraction. 
+
+{\color{blue}
+
+Since $X$ and $Y$ are independent random variables, we have
+
+$$P(X=4, Y=6)=P(X=4)\cdot P(Y=6)=\frac{1}{6}\cdot\frac{1}{6}=\frac{1}{36}$$
+
+}
+
+\indent\indent b. Find $P(X>4|Y=1)$ and entery your answer as a fraction. 
+
+{\color{blue}
+
+Since $X$ and $Y$ are independent random variables, we have
+
+$$P(X>4|Y=1)=P(X>4)=\frac{1}{6}+\frac{1}{6}=\frac{2}{6}=\frac{1}{3}$$
+
+}
+
+\section{Quiz 6}
+
+\noindent\textbf{Problem 1}:
+
+Let $X$ and $Y$ be two random variables. Then,
+
+\begin{itemize}
+    \item {\color{blue}$E(X+Y)=E(X)+E(Y)$ regardless of whether $X$ and $Y$ are independent}
+    \item $E(X+Y)=E(X)+E(Y)$ iff $X$ and $Y$ are independent
+\end{itemize}
+
+\noindent\textbf{Problem 2}:
+
+Let $X$ and $Y$ be two random variables. Then,
+
+\begin{itemize}
+    \item {\color{blue}$E(XY)=E(X)E(Y)$  iff $X$ and $Y$ are independent}
+    \item $E(XY)=E(X)E(Y)$ regardless of whether $X$ and $Y$ are independent
+\end{itemize}
+
+\noindent\textbf{Problem 3}:
+
+Suppose $X$ is a random variable with $E(X)=2$.
+
+\indent\indent a. Let $Y=2X+2$. Find $E(Y)$.
+
+{\color{blue}
+
+$$E(Y)=E(2X+2)=2E(X)+2=2\cdot2+2=6$$
+
+}
+
+\indent\indent b. Let $Y=2X-1$. Find $E(Y)$.
+
+{\color{blue}
+
+$$E(Y)=E(2X-1)=2E(X)-1=2\cdot2-1=3$$
+
+}
+
+\noindent\textbf{Problem 4}:
+
+Two fair dice are rolled and the smaller number, say $X$, is noted. Hence, $X$ has the following distribution:
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        $x$&$1$&$2$&$3$&$4$&$5$&$6$\\
+        \hline
+        $P(X=x)$&$\frac{11}{36}$&$\frac{9}{36}$&$\frac{7}{36}$&$\frac{5}{36}$&$\frac{3}{36}$&$\frac{1}{36}$\\
+        \hline
+    \end{tabular}
+\end{center}
+
+Calculate $E(X)$ and enter it as a fraction.
+
+{\color{blue}
+
+$$E(X)=1\cdot\frac{11}{36}+2\cdot\frac{9}{36}+3\cdot\frac{7}{36}+4\cdot\frac{5}{36}+5\cdot\frac{3}{36}+6\cdot\frac{1}{36}=\frac{91}{36}$$
+
+}
+
+\section{Quiz 7}
+
+\noindent\textbf{Problem 1}:
+
+Decide which of the following is correct?
+
+\begin{itemize}
+    \item {\color{blue}$Var(aX+b)=a^2\cdot Var(X)$}
+    \item $Var(aX+b)=a^2\cdot Var(X)+b$
+    \item $Var(aX+b)=a\cdot Var(X)+b$
+    \item $Var(aX+b)=a^2\cdot Var(X)+b^2$
+\end{itemize}
+
+\noindent\textbf{Problem 2}:
+
+Decide which of the following is correct?
+
+\begin{itemize}
+    \item {\color{blue}$Var(X+Y)=Var(X)+Var(Y)$ if $X$ and $Y$ are independent.}
+    \item $Var(X+Y)=Var(X)+Var(Y)$ regardless of whether $X$ and $Y$ are independent or not.
+\end{itemize}
+
+\noindent\textbf{Problem 3}:
+
+Let $X$ be a discrete random variable with $R_X=\{0,1,2,3\}$ and the following distribution
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        $x$&$0$&$1$&$2$&$3$\\
+        \hline
+        $P(X=x)$&$0.2$&$0.2$&$0.3$&$0.3$\\
+        \hline
+    \end{tabular}
+\end{center}
+
+Let $Y=X(x-1)(X-2)$. Calculate $Var(Y)$ and enter it as a decimal number.
+
+{\color{blue}
+
+$Y$ has the following distribution:
+
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        $y$&$0$&$1$\\
+        \hline
+        $P(Y=y)$&$0.7$&$0.3$\\
+        \hline
+    \end{tabular}
+\end{center}
+
+Thus, $E(Y)=0\cdot0.7+6\cdot0.3=1.8$. Moreover, $E(Y^2)=0\cdot0.7+36\cdot0.3=10.8$. Thus, $Var(Y)=10.8-(1.8)^2=7.56$.
+
+}
+
+\noindent\textbf{Problem 4}:
+
+A random variable $X$ has expectation $2$ and variance $1$. Calculate $E(X^2)$.
+
+{\color{blue}
+
+$$E(X^2)=Var(X)+[E(X)]^2=1+2^2=5$$
+
+}
+\end{document}

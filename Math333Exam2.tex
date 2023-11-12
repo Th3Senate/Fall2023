@@ -1,0 +1,95 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{xcolor}
+
+\title{MATH333 Exam 2}
+\author{Christopher La Valle}
+\date{November 2023}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Discrete Random Variables and Probability Distributions}
+
+\noindent\textbf{\color{blue}Range of a Discrete random variable}: The set of all values $x$ for which the probability $P(X=x)$ is non-zero.
+
+\noindent\textbf{\color{blue}Discrete Random Variable}: A random variable with a finite (or countable infinite) range.
+
+\noindent\textbf{\color{blue}Probability Distribution}: For a sample space, a description of the set of possible outcomes with a mehtod to determine probabilities. For a random variable, a probability distirubiton is a description of the range along with a method to determine probabilities
+
+\noindent\textbf{\color{blue}Probability Mass Function}: For a discrete random variable $X$ with possible values $x_1,x_2,\ldots,x_n$, a probability mass funciton is a function such that
+
+\begin{enumerate}
+    \item $f(x_i)\ge0$.
+    \item $\underset{i=1}{\overset{n}{\sum}}f(x_i)=1$.
+    \item $f(x_i)=P(X=x_i)$.
+\end{enumerate}
+
+\noindent\textbf{\color{blue}Cumulative Distribution Function}: The cumulative distribution function of a discrete random variable $X$, denoted as $F(x)$ is 
+
+$$F(x)=P(X\le x)=\underset{x_i\le x}{\sum}f(x_i)$$
+
+For a discrete random variable $X$, $F(x)$ satisfies the following properties.
+
+\begin{enumerate}
+    \item $F(x)=P(X\le x)=\underset{x_i\le x}f(x_i)$.
+    \item $0\le F(x)\le1$.
+    \item If $x\le y$, then $F(x)\le F(y)$.
+\end{enumerate}
+
+\noindent\textbf{\color{blue}Expected Value of a Function of a Discrete Random Variable}: If $X$ is a discrete random variable with probability mass function $f(x)$,
+
+$$E[h(X)]=\underset{x}{\sum}h(x)f(x)$$
+
+The \textbf{variance} of $X$, denoted as $\sigma^2$ or $V(X)$, is
+
+$$\sigma^2=V(X)=E(X-\mu)^2=\underset{x}{(x-\mu)^2f(x)}=\underset{x}{\sum}x^2f(x)-\mu^2$$
+
+The \textbf{standard deviation} of $X$ is $\sigma=\sqrt{\sigma^2}$.
+
+\noindent\textbf{\color{blue}Discrete Uniform Distribution}: A random variable $X$ has a discrete uniform distriubtion if each of the $n$ values in its range, $x_1,x_2,\ldots,x_n$, has equal probability. Then,
+
+Suppose that $X$ is discrete uniform random variable on the consecutive integers $a$, $a+1$, $a+2$, $\ldots$, $b$, for $a\le b$. The mean of $X$ is 
+
+$$\mu=E(X)=\frac{b+a}{2}$$
+
+The variance of $X$ is 
+
+$$\sigma^2=\frac{(b-a+1)^2-1}{12}$$
+
+$$f(x_i)=\frac{1}{n}$$
+
+\noindent\textbf{Bernoulli Trial}: Sequences of independent trials with only two outcomes, generally called "success" and "failure," in which the probability of success remains constant.
+
+\noindent\textbf{\color{blue}Binomial Distribution}: A random experiment consists of $n$ Bernoulli trials such that
+
+\begin{enumerate}
+    \item The trials are independent.
+    \item Each trial results in only two possible outcomes, labeled as "success" and "failure."
+    \item The probability of a success in each trial, denoted as $p$, remains constant.
+\end{enumerate}
+
+The random variable $X$ that equals the number of trials that result in a success is a binomial random variable with parameters $0<p<1$ and $n=1,2,\ldots$. The probability mass function is
+
+$$f(x)=\begin{pmatrix}n\\x\end{pmatrix}p^x(1-p)^{n-x}\quad x=0,1,\ldots,n$$
+
+If $X$ is a binomial random variable with parameters $p$ and $n$,
+
+$$\mu=E(X)=np\quad\text{and}\quad\sigma^2=V(X)=np(1-p)$$
+
+\noindent\textbf{\color{blue}Geometric Distribution}: In a series of Bernoulli trials (independent trials with constant probability $p$ of a success), the random variable $X$ that equals the number of trials until the first success is a geometric random variable with parameter $0<p<1$ and 
+
+$$f(x)=(1-p)^{x=1}p\ x=1,2,\ldots$$
+
+If $X$ is a geometric random variable with parameter $p$,
+
+$$\mu=E(X)=\frac{1}{p}\quad\text{and}\quad\sigma^2=V(X)=\frac{1-p}{p^2}$$
+
+\noindent\textbf{Lack of Memory Property}: A property of a Poisson process. The probability of a count in an interval depends only on the length of the interval (and not on the starting point of the interval). A similar property holds for a series of Bernoulli trials. The probability of a success in a specified number of trials depends only on the number of trials (and not on the starting trial).
+
+\section{Continuous Random Variables and Probability Distributions}
+\end{document}
