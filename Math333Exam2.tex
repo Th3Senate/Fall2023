@@ -1,7 +1,8 @@
-\documentclass{article}
+\documentclass{article}      
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{xcolor}
+\usepackage{enumitem}
 
 \title{MATH333 Exam 2}
 \author{Christopher La Valle}
@@ -29,9 +30,9 @@
     \item $f(x_i)=P(X=x_i)$.
 \end{enumerate}
 
-\noindent\textbf{\color{blue}Cumulative Distribution Function}: The cumulative distribution function of a discrete random variable $X$, denoted as $F(x)$ is 
+\noindent\textbf{\color{blue}Cumulative Distribution Function}: The cumulative distribution function of a discrete random variable $X$, denoted as $F(x)$ is
 
-$$F(x)=P(X\le x)=\underset{x_i\le x}{\sum}f(x_i)$$
+\[F(x)=P(X\le x)=\underset{x_i\le x}{\sum}f(x_i)\]
 
 For a discrete random variable $X$, $F(x)$ satisfies the following properties.
 
@@ -41,29 +42,29 @@ For a discrete random variable $X$, $F(x)$ satisfies the following properties.
     \item If $x\le y$, then $F(x)\le F(y)$.
 \end{enumerate}
 
-\noindent\textbf{\color{blue}Expected Value of a Function of a Discrete Random Variable}: If $X$ is a discrete random variable with probability mass function $f(x)$,
+\noindent\textbf{\color{blue}Mean, Variance, and Standard Deviation (Discrete)}: The \textbf{mean} or \textbf{expected value} of the discrete random variable $X$, denoted as $\mu$ or $E(X)$, its
 
-$$E[h(X)]=\underset{x}{\sum}h(x)f(x)$$
+\[\mu=E(X)=\underset{x}{\sum}xf(x)\]
 
 The \textbf{variance} of $X$, denoted as $\sigma^2$ or $V(X)$, is
 
-$$\sigma^2=V(X)=E(X-\mu)^2=\underset{x}{(x-\mu)^2f(x)}=\underset{x}{\sum}x^2f(x)-\mu^2$$
+\[\sigma^2=V(X)=E(X-\mu)^2=\underset{x}{\sum}(x-\mu)^2f(x)=\underset{x}x^2f(x)-\mu\]
 
-The \textbf{standard deviation} of $X$ is $\sigma=\sqrt{\sigma^2}$.
+The \textbf{standard deviation} of $X$ is $\sigma=\sqrt{\sigma^2}$
 
 \noindent\textbf{\color{blue}Discrete Uniform Distribution}: A random variable $X$ has a discrete uniform distriubtion if each of the $n$ values in its range, $x_1,x_2,\ldots,x_n$, has equal probability. Then,
 
-Suppose that $X$ is discrete uniform random variable on the consecutive integers $a$, $a+1$, $a+2$, $\ldots$, $b$, for $a\le b$. The mean of $X$ is 
+\[f(x_i)=\frac{1}{n}\]
 
-$$\mu=E(X)=\frac{b+a}{2}$$
+Suppose that $X$ is discrete uniform random variable on the consecutive integers $a$, $a+1$, $a+2$, $\ldots$, $b$, for $a\le b$. The mean of $X$ is
 
-The variance of $X$ is 
+\[\mu=E(X)=\frac{b+a}{2}\]
 
-$$\sigma^2=\frac{(b-a+1)^2-1}{12}$$
+The variance of $X$ is
 
-$$f(x_i)=\frac{1}{n}$$
+\[\sigma^2=\frac{(b-a+1)^2-1}{12}\]
 
-\noindent\textbf{Bernoulli Trial}: Sequences of independent trials with only two outcomes, generally called "success" and "failure," in which the probability of success remains constant.
+\noindent\textbf{\color{blue}Bernoulli Trial}: Sequences of independent trials with only two outcomes, generally called "success" and "failure," in which the probability of success remains constant.
 
 \noindent\textbf{\color{blue}Binomial Distribution}: A random experiment consists of $n$ Bernoulli trials such that
 
@@ -75,21 +76,181 @@ $$f(x_i)=\frac{1}{n}$$
 
 The random variable $X$ that equals the number of trials that result in a success is a binomial random variable with parameters $0<p<1$ and $n=1,2,\ldots$. The probability mass function is
 
-$$f(x)=\begin{pmatrix}n\\x\end{pmatrix}p^x(1-p)^{n-x}\quad x=0,1,\ldots,n$$
+\[f(x)=\begin{pmatrix}n\\x\end{pmatrix}p^x(1-p)^{n-x}\quad x=0,1,\ldots,n\]
 
 If $X$ is a binomial random variable with parameters $p$ and $n$,
 
-$$\mu=E(X)=np\quad\text{and}\quad\sigma^2=V(X)=np(1-p)$$
+\[\mu=E(X)=np\quad\text{and}\quad\sigma^2=V(X)=np(1-p)\]
 
-\noindent\textbf{\color{blue}Geometric Distribution}: In a series of Bernoulli trials (independent trials with constant probability $p$ of a success), the random variable $X$ that equals the number of trials until the first success is a geometric random variable with parameter $0<p<1$ and 
+\noindent\textbf{\color{blue}Geometric Distribution}: In a series of Bernoulli trials (independent trials with constant probability $p$ of a success), the random variable $X$ that equals the number of trials until the first 
+success is a geometric random variable with parameter $0<p<1$ and
 
-$$f(x)=(1-p)^{x=1}p\ x=1,2,\ldots$$
+\[f(x)=(1-p)^{x=1}p\ x=1,2,\ldots\]
 
 If $X$ is a geometric random variable with parameter $p$,
 
-$$\mu=E(X)=\frac{1}{p}\quad\text{and}\quad\sigma^2=V(X)=\frac{1-p}{p^2}$$
+\[\mu=E(X)=\frac{1}{p}\quad\text{and}\quad\sigma^2=V(X)=\frac{1-p}{p^2}\]
 
-\noindent\textbf{Lack of Memory Property}: A property of a Poisson process. The probability of a count in an interval depends only on the length of the interval (and not on the starting point of the interval). A similar property holds for a series of Bernoulli trials. The probability of a success in a specified number of trials depends only on the number of trials (and not on the starting trial).
+\noindent\textbf{\color{red}Lack of Memory Property}: A property of a Poisson process. The probability of a count in an interval depends only on the length of the interval (and not on the starting point of the interval). A similar property holds for a series of Bernoulli trials. The probability of a success in a specified number of trials depends only on the number of trials (and not on the starting trial).
+
+\noindent\textbf{\color{blue}Negative Binomial Distribution}: In a series of Bernoulli trials (independent trials with constant probability $p$ of success), the random variable $X$ that equals the number of trials until $r$ 
+successes occur is a negative binomial random variable with parameters $0<p<1$ and $r=1,2,3,\ldots,$ and
+
+\[f(x)=\begin{pmatrix}x-1\\r-1\end{pmatrix}(1-p)^{x-r}p^r\ x=r,r+1,r+2\]
+
+If $X$ is a negative binomial random variable with parameters $p$ and $r$,
+
+\[\mu=E(X)=\frac{r}{p}\ \text{and}\ \sigma^2=V(X)=\frac{r(1-p)}{p^2}\]
+
+\noindent\textbf{\color{blue}Poisson Distribution}: The random variable $X$ that equals the number of events in a Poisson process is a Poisson random variable with parameter $0<\lambda$, and
+
+\[f(x)=\frac{e^{-\lambda T}(\lambda T)^{x}}{x!}\ x=0,1,2,\ldots\]
+
+If $X$ is a Poisson random variable over an interval of length $T$ with parameter $\lambda$, then
+
+\[\mu=E(X)=\lambda T\quad\text{and}\quad\sigma^2=V(X)=\lambda T\]
 
 \section{Continuous Random Variables and Probability Distributions}
+
+\noindent\textbf{\color{blue}Continuous Random Variable}: A random variable with an interval (either finite or infinite) of real numbers for its range.
+
+\noindent\textbf{\color{blue}Probability Density Function}:
+
+For a continuous random variable $X$, a probability density function is a function such that
+
+\begin{enumerate}
+    \item $f(x)\ge0$
+    \item $\int_{-\infty}^{\infty}f(x)dx=1$
+    \item $P(a\le X\le b)=\int_a^bf(x)dx$
+\end{enumerate}
+
+\begin{itemize}
+
+    \item $P(X=x)=0$
+    \item If $X$ is a continuous random variables, for any $x_1$ and $x_2$,
+\[P(x_1\le X\le x_2)=P(x_1<X\le x_2)=P(x_1\le X<x_2)=P(x_1<X<x_2)\]
+\end{itemize}
+
+\noindent\textbf{\color{blue}Cumulative Distribution Function}:
+
+The cumulative distribution function of a continuous random variable $X$ is
+
+\[F(x)=P(X\le x)=\int_{-\infty}^xf(u)du\]
+
+for $-\infty<x<\infty$.
+
+\noindent\textbf{\color{orange}Probability Distribution Function from the Cumulative Distribution Function}: Given $F(x)$,
+
+\[f(x)=\frac{dF(x)}{dx}\]
+
+\noindent\textbf{\color{blue}Mean, Variance, and Standard Deviation (Continuous)}: Suppose that $X$ is a continuous random variable with probability density function $f(x)$. The \textbf{mean} or \textbf{expected value} of $X$, denoted as $\mu$ or $E(X)$, is
+
+\[\mu=E(X)=\int_{-\infty}^{\infty}xf(x)dx\]
+
+The \textbf{variance} of $X$, denoted as $V(X)$ or $\sigma^2$, is
+
+\[\sigma^2=V(X)=\int_{-\infty}^{\infty}(x-\mu)^2f(x)dx=\int_{-\infty}^{\infty}x^2f(x)dx-\mu^2\]
+
+The \textbf{standard deviation} of $X$ is $\sigma=\sqrt{\sigma^2}$.
+
+\noindent\textbf{\color{blue}Continuous Uniform Distribution}: A continuous random variable $X$ with probability density funciton
+
+\[f(x)=\frac{1}{(b-a)},\quad a\le x\le b\]
+
+is a continuous random variable.
+
+If $X$ is a continuous uniform random variable over $a\le x\le b$,
+
+\[\mu=E(X)=\frac{a+b}{2}\quad\text{and}\quad\sigma^2=V(X)=\frac{(b-a)^2}{12}\]
+
+\noindent\textbf{\color{blue}Normal Distribution}: A random variable $X$ with probability density function
+
+\[f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{\frac{-(x-\mu)^2}{2\sigma^2}}\ -\infty<x<\infty\]
+
+is a normal random variable with parameters $\mu$ where $-\infty<\mu<\infty$ and $\sigma>0$. Also,
+
+\[E(X)=\mu\quad\text{and}\quad V(X)=\sigma^2\]
+
+and the notation $\mathcal{N}(\mu,\sigma^2)$ is used to denote the distribution.
+
+\noindent\textbf{\color{blue}Standard Normal Random Variable}: A normal random variable with
+
+\[\mu=0\quad\text{and}\quad\sigma^2=1\]
+
+is called a standard normal random variable and is denoted as $Z$. The cumulative distirubiton function of a standard normal random variable is denoted as
+
+\[\Phi(z)=P(Z\le z)\]
+
+\noindent\textbf{\color{red}Standardizing a Normal Random Variable}: If $X$ is a normal random variable with $E(X)=\mu$ and $V(X)=\sigma^2$, the random variable
+
+\[\frac{X-\mu}{\sigma}\]
+
+is a normal random variable with $E(Z)=0$ and $V(Z)=1$. That is, $Z$ is a standard normal random variable.
+
+\noindent\textbf{\color{red}Standardizing to Calculate a Probability}:
+
+Suppose that $X$ is a normal random variable with mean $\mu$ and variance $\sigma^2$. Then,
+
+\[P(X\le x)=P(\frac{X-\mu}{\sigma}\le\frac{x-\mu}{\sigma})=P(Z\le z)\]
+
+where $Z$ is a standard normal random variable, and $z=\frac{(x-\mu)}{\sigma}$ is the z-value obtained by standardizing $X$. The probability is obtained by using the tables.
+
+\noindent\textbf{\color{blue}Normal Approximation to the Binomial Distribution}: If $X$ is a binomial random variable with parameters $n$ and $p$,
+
+\[Z=\frac{X-np}{\sqrt{np(1-p)}}\]
+
+is approximately a standard normal random variable. To approximate a binomial probability with a normal distribution, a continuity correction is applied as follows
+
+\[P(X\le x)=P(X\le x+0.5)\approx P(Z\le\frac{x+0.5-np}{\sqrt{np(1-p)}})\]
+
+and
+
+\[P(x\le X)=P(X\le x-0.5)\approx P(Z\le\frac{x-0.5-np}{\sqrt{np(1-p)}})\]
+
+This approximation is good for $np>5$ and $n(1-p)>5$.
+
+\noindent\textbf{\color{blue}Normal Approximation to the Poisson Distribution}: If $X$ is a Poisson random variable with $E(X)=\lambda$ and $V(X)=\lambda$,
+
+\[Z=\frac{X-\lambda}{\sqrt{\lambda}}\]
+
+is approximately a standard normal random variable. The same continuity correction used for the binomial distirubiton can also be applied. The approximation is good for
+
+\[\lambda>5\]
+
+\noindent\textbf{\color{blue}Poisson Process}: A random experiment with events that occur in an interval and satisfy the following assumptions. The interval can be partitioned into subintervals such that the probability of more than one event in a subinterval is zero, the probability of an event in a subinterval is proportional to the length of the subinterval, and the event in each subinterval is independent of other subintervals.
+
+\noindent\textbf{\color{blue}Exponential Distribution}: The random variable $X$ that equals the distance between successive events from a Poisson process with mean number of events $\lambda>0$ per unit interval is an exponential random variable with parameter $\lambda$. The probability density function of $X$ is
+
+\[f(x)=\lambda e^{-\lambda x}\text{ for }0\le x<\infty\]
+
+If the random variable $X$ has an exponential distribution with parameter $\lambda$,
+
+\[\mu=E(X)=\frac{1}{\lambda}\text{ and }\sigma^2=V(X)=\frac{1}{\lambda^2}\]
+
+\noindent\textbf{\color{red}Lack of Memory Property}: For an exponential random variable $X$,
+
+\[P(X<t_1+t_2|X>t_1)=P(X<t_2)\]
+
+\section{Point Estimation of Parameters and Sampling Distributions}
+
+\noindent\textbf{\color{blue}Statistical Inference}: A conclusion from a statistical analysis. Typically the conclusion from a hypothesis test or an interval estimate.
+
+\begin{itemize}
+    \item \textbf{Parameter Estimation}: The process of estimating the parameters of a population or probability distribution. Parameter estimation, along with hypothesis testing, is one of the two major techniques of statistical inference.
+    \item \textbf{Hypothesis Testing}: A statistical method used to determine if there is enough evidence in a sample data to draw conclusions about a population
+\end{itemize}
+
+\noindent\textbf{\color{blue}Statistic}: A summary value calculated from a sample of observations. Usually, a statistic is an estimator of some population parameter.
+
+\noindent\textbf{\color{blue}Sampling Distribution}: The probability distribution of a statistic. For example, the sampling distribution of the sample mean $\bar{X}$ is the normal distribution.
+
+\noindent\textbf{\color{blue}Point Estimator}: A point estimate of some population parameter $\theta$ is a single numerical value $\hat{\theta}$ of a statistic $\hat{\Theta}$. The statistic $\hat{\Theta}$ is called  the point estimator.
+
+\noindent\textbf{\color{blue}Random Sample}: The random variable $X_1,X_2,\ldots,X_n$ are a random sample of size $n$ if
+
+\begin{enumerate}[label=\alph*.]
+    \item the $X_i$'s are independent random variables and
+    \item every $X_i$ has the same distribution.
+\end{enumerate}
+
 \end{document}

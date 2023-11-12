@@ -17,7 +17,7 @@
 
 \textbf{\color{blue}Random  Variable}: A random variable $X$ is a function from the outcome space to the real numbers.
 
-$$X:\Omega\rightarrow\mathbb{R}$$
+\[X:\Omega\rightarrow\mathbb{R}\]
 
 \noindent\textbf{\color{blue}Range}: The range of a random variable $X$, often denoted $Range(X)$ or $R_X$, is the set of possible values of $X$.
 
@@ -27,20 +27,20 @@ $$X:\Omega\rightarrow\mathbb{R}$$
 
 \noindent\textbf{\color{orange}Random Variables in Terms of Events}: For a random variable $X$, a real number $x$, and a set $B\subseteq\mathbb{R}$, we write
 
-$$\{X=x\}:=\{\omega\in\Omega:\ X(\omega)=x\}$$
+\[\{X=x\}:=\{\omega\in\Omega:\ X(\omega)=x\}\]
 
-$$\{X\in B\}:=\{\omega\in\Omega:\ X(\omega)\in B\}$$
+\[\{X\in B\}:=\{\omega\in\Omega:\ X(\omega)\in B\}\]
 
 and when we have a probability $P$ on $\Omega$, we further abbreviate:
 
-$$P(X=x):=P(\{X=x\}),\qquad P(X\in B):=P(\{X\in B\})$$
+\[P(X=x):=P(\{X=x\}),\qquad P(X\in B):=P(\{X\in B\})\]
 
 \section{Probability Mass Functions}
 
 
 \noindent\textbf{\color{blue}Probability Mass Function (PMF)}: Let $X$ be a discrete random variable with range $R_x$. The function
 
-$$f_X(x)=P(X=x)\ \text{for each}\ x\in R_x$$
+\[f_X(x)=P(X=x)\ \text{for each}\ x\in R_x\]
 
 \noindent is called the probability mass function of $X$.
 
@@ -52,31 +52,31 @@ $$f_X(x)=P(X=x)\ \text{for each}\ x\in R_x$$
 
 \noindent\textbf{\color{orange}Functions of Random Variables}: If $W$ is a random variable and $X=g(W)$, then $X$ is also a random variable where
 
-$$R_X=\{g(w):w\in R_W\}$$
+\[R_X=\{g(w):w\in R_W\}\]
 
 and
 
-$$f_X(x)=\underset{w:g(x)=x}{\sum}f_w(w)$$
+\[f_X(x)=\underset{w:g(x)=x}{\sum}f_w(w)\]
 
 \noindent\textbf{\color{blue}Joint Probability Mass Function}: The joint probability mass function of two discrete random variables $X$ and $Y$ is defined as
 
-$$f_{XY}(x,y)=P(X=x,Y=y)=P(x,y)$$
+\[f_{XY}(x,y)=P(X=x,Y=y)=P(x,y)\]
 
 with $P(x,y)\ge0$ and $\underset{(x,y)}{\sum}P(x,y)=1$.
 
 \noindent\textbf{\color{blue}Joint Range}: The joint range for random variables $X$ and $Y$ is given by
 
-$$R_{XY}=\{(x,y)|P(X=x,Y=y)>0\}$$
+\[R_{XY}=\{(x,y)|P(X=x,Y=y)>0\}\]
 
 \noindent\textbf{\color{blue}Marginal Probability Mass Function}: If we know the joint PMF of two random variables $X$ and $Y$, we can also obtain the individual distributions of $X$ with respect to $Y$ and vice versa:
 
-$$P(X=x)=\underset{y_j\in R_Y}{\sum}P(X=x,Y=y_j),\ \text{for any}\ x\in R_x$$
+\[P(X=x)=\underset{y_j\in R_Y}{\sum}P(X=x,Y=y_j),\ \text{for any}\ x\in R_x\]
 
-$$P(Y=y)=\underset{x_i\in R_X}{\sum}P(X=x_i,Y=y),\ \text{for any}\ y\in R_Y$$
+\[P(Y=y)=\underset{x_i\in R_X}{\sum}P(X=x_i,Y=y),\ \text{for any}\ y\in R_Y\]
 
 \noindent\textbf{\color{red}Identical Distribution}: Random variables have the same or identical distribution if $X$ and $Y$ have the same range, and for every value $v$ in this range,
 
-$$P(X=v)=P(Y=v)$$
+\[P(X=v)=P(Y=v)\]
 
 \noindent\textbf{\color{red}Change of Variable Principle}: If $X$ has the same distribution as $Y$, then any statement about $X$ has the same probability as the corresponding statement about $Y$, and $g(X)$ has the distribution as $g(Y)$, for any function $g$.
 
@@ -86,43 +86,43 @@ $$P(X=v)=P(Y=v)$$
 
 \noindent\textbf{\color{orange}Functions of Two Random Variables}: Let $X$, $Y$ be two random variables, and suppose that $Z=g(X,Y)$, where $g:\mathbb{R}^2\rightarrow\mathbb{R}$. Then,
 
-$$P(Z=z)=\underset{(x_i,y_j)\in A_z}{\sum}P(X=x_i, Y=y_j)$$
+\[P(Z=z)=\underset{(x_i,y_j)\in A_z}{\sum}P(X=x_i, Y=y_j)\]
 
 where 
 
-$$A_z=\{(x_i,y_j)\in R_{XY}:g(x_i,y_j)=z\}$$
+\[A_z=\{(x_i,y_j)\in R_{XY}:g(x_i,y_j)=z\}\]
 
 \noindent\textbf{\color{blue}Conditional Distributions}: For any event $A$ and any random variable $Y$, the collection of conditional probabilities
 
-$$P(Y\in B|A)=\frac{P[(Y\in B)\cap A]}{P(A)}$$
+\[P(Y\in B|A)=\frac{P[(Y\in B)\cap A]}{P(A)}\]
 
 defines the probability distribution as $B$ varies over subsets of the range of $Y$. This distribution is called the conditional distribution of $Y$ given $A$. 
 
 If $Y$ is discrete, the conditional distribution of $Y$ given $A$ is specified by the conditional probabilities
 
-$$P(Y=y|A)\quad\text{for}\ y\in R_Y$$
+\[P(Y=y|A)\quad\text{for}\ y\in R_Y\]
 
 \noindent\textbf{\color{blue}Conditional PMF of $Y$ given $A$}: For a discrete random variable $Y$ and event $A$, the conditional PMF of $Y$ given $A$ is defined as 
 
-$$P(Y=y|A)=\frac{P[(Y=y)\cap A]}{P(A)}\qquad\text{for any }y\in R_Y$$
+\[P(Y=y|A)=\frac{P[(Y=y)\cap A]}{P(A)}\qquad\text{for any }y\in R_Y\]
 
 \noindent\textbf{\color{red}Multiplication Rule}: If the marginal (unconditional) distribution of $X$ is known, together with the conditional distribution of $Y$ given $X=x$ for all possible values $x$ of $X$, the joint distribution of $X$ and $Y$ is found using by
 
-$$P(X=x,Y=y)=P(X=x)P(Y=y,X=x)$$
+\[P(X=x,Y=y)=P(X=x)P(Y=y,X=x)\]
 
 \noindent\textbf{\color{blue}Independent Random Variables}: Two random variables $X$ and $Y$ are independent if and only if for all intervals $A$, $B\subseteq\mathbb{R}$,
 
-$$P(X\in A,Y\in B)=P(X\in A)P(Y\in B)$$
+\[P(X\in A,Y\in B)=P(X\in A)P(Y\in B)\]
 
 \noindent\textbf{\color{red}Theorem for Independent Random Variables}: If $X$ and $Y$ are discrete random variables, they are independent iff 
 
-$$P(X=x,Y=y)=P(X=x)P(Y=y)\quad\text{for all}\ x,y\in\mathbb{R}$$
+\[P(X=x,Y=y)=P(X=x)P(Y=y)\quad\text{for all}\ x,y\in\mathbb{R}\]
 
 \section{Expectation}
 
 \textbf{\color{blue}Expectation}: The expectation (also called the expected value or mean) of a random variable $X$, is the mean of the distribution of $X$, denoted denoted and defined by
 
-$$E(X)=\underset{x\in R_X}{\sum}x\cdot P(X=x)$$
+\[E(X)=\underset{x\in R_X}{\sum}x\cdot P(X=x)\]
 
 \noindent\textbf{\color{blue}Mean}: The average of all possible values of $X$ weighted by their probabilities.
 
@@ -134,11 +134,11 @@ Note: If the distribution of $X$ is symmetric about some point $m$, and has a si
 
 \noindent\textbf{\color{orange}Expectation of a Function of $X$}: Typically, $E[g(x)]\ne g[E(X)]$. Rather
 
-$$E[g(X)]=\underset{x\in R_x}{\sum}g(x)P(X=x)$$
+\[E[g(X)]=\underset{x\in R_x}{\sum}g(x)P(X=x)\]
 
 \noindent\textbf{\color{blue}$k$-th Moment of $X$}: For $g(x)=x^k$ with $k=1,2,\ldots$, the number
 
-$$E(X^k)=\underset{x\in R_X}{\sum}x^kP(X=x)$$
+\[E(X^k)=\underset{x\in R_X}{\sum}x^kP(X=x)\]
 
 derived from the distribution of $X$ is called the $k$-th moment of $X$.
 If $a$ and $b$ are constants, then
@@ -150,42 +150,42 @@ If $a$ and $b$ are constants, then
     \item $E(aX)=aE(X)$
     \item $E(b)=b$
     \item If $X$ and $Y$ are two discrete random variables, then
-$$E[g(X,Y)]=\underset{(x,y)\in R_{XY}}{\sum}g(x,y)\cdot P(X=x,Y=y)$$
+\[E[g(X,Y)]=\underset{(x,y)\in R_{XY}}{\sum}g(x,y)\cdot P(X=x,Y=y)\]
     \item If $X$ and $Y$ are independent, then
-$$E(XY)=E(X)E(Y)$$
+\[E(XY)=E(X)E(Y)\]
 \end{itemize}
 
 \noindent\textbf{\color{red}Addition Rule}: If $X$ and $Y$ are jointly distributed random variables such that $E(X)<\infty$ and $E(Y)<\infty$
 
-$$E(X+Y)=E(X)+E(Y)$$
+\[E(X+Y)=E(X)+E(Y)\]
 
 no matter whether $X$ and $Y$ are independent or not. Consequently, for a sequence of random variables $X_1,\ldots,X_n$ such that $E(X_i)<\infty$ for $i=1,\ldots,n$
 
-$$E(X_1+\ldots+X_n)=E(X_1)+\ldots+E(X_n)$$
+\[E(X_1+\ldots+X_n)=E(X_1)+\ldots+E(X_n)\]
 
 \noindent\textbf{\color{blue}Indicator Random Variables}: If $A$ is an event, the indicator of $A$ is the random variable $I_A$ such that 
 
-$$I_A(\omega)=\begin{cases}1&\omega\in A\\0&\omega\in A^C\end{cases}$$
+\[I_A(\omega)=\begin{cases}1&\omega\in A\\0&\omega\in A^C\end{cases}\]
 
 \noindent\textbf{\color{orange}Method of Indicators}: Simplifies calculations of the expectation of a counting variable $X$ that counts the number of events that occur in some list of $n$ events, say $A_1,\ldots,A_n$.
 
 \begin{itemize}
     \item Write $X$ as a sum of indicators,
-    $$X=I_1+\ldots+I_n$$
+    \[X=I_1+\ldots+I_n\]
     where $I_j$ is the indicator of $A_j$.
     \item Calculate the expectation of $X$ as
-    $$E(X)=E(I_1+\ldots+I_n)$$
-    $$E(I_1)+\ldots+E(I_n)$$
-    $$P(A_1)+\ldots+P(A_n)$$
+    \[E(X)=E(I_1+\ldots+I_n)\]
+    \[E(I_1)+\ldots+E(I_n)\]
+    \[P(A_1)+\ldots+P(A_n)\]
 \end{itemize}
 
 \noindent\textbf{\color{red}Tail Sum Formula}: For $X$ with possible values $\{0,1,\ldots,n\}$:
 
-$$E(X)=\underset{j=1}{\overset{n}{\sum}}P(X\ge j)$$
+\[E(X)=\underset{j=1}{\overset{n}{\sum}}P(X\ge j)\]
 
 \noindent\textbf{\color{red}Markov's Inequality}: If $X\ge0$, then
 
-$$P(X\ge a)\le\frac{E(X)}{a}$$
+\[P(X\ge a)\le\frac{E(X)}{a}\]
 
 for every $a>0$.
 
@@ -193,51 +193,51 @@ for every $a>0$.
 
 \noindent\textbf{\color{blue}Varaince and Standard Deviation}: The variance of $X$, denoted $Var(X)$, is the mean squared deviation of $X$ from its expected value $\mu=E(X)$;
 
-$$Var(X)=E[(X-\mu)^2]$$
+\[Var(X)=E[(X-\mu)^2]\]
 
-$$Var(X)=E(X^2)-[E(X)]^2$$
+\[Var(X)=E(X^2)-[E(X)]^2\]
 
 The standard deviation of $X$, denoted $SD(X)$, is the square root of the variance of $X$:
 
-$$SD(X)=\sqrt{Var(X)}$$
+\[SD(X)=\sqrt{Var(X)}\]
 
 \noindent\textbf{\color{red}Scaling and Shifting}: For a random variable $X$ and real numbers $a$ and $b$,
 
-$$Var(aX+b)=a^2Var(X)$$
+\[Var(aX+b)=a^2Var(X)\]
  
-$$SD(aX+b)=|a|SD(X)$$
+\[SD(aX+b)=|a|SD(X)\]
 
 \noindent\textbf{\color{blue}Standardization}: If a random variable $X$ has $E(X)=\mu$ and $SD(X)=\sigma>0$, the random variable
 
-$$X^*=\frac{X-\mu}{\sigma}$$
+\[X^*=\frac{X-\mu}{\sigma}\]
  
 is called $X$ in standard units or standardization of $X$ has $E(X^*)=0$ and $SD(X^*)=1$. Positive values of $X^*$ correspond to higher than expected values of $X$; negative values of $X^*$ correspond to lower than expected values of $X$. Any event determined by the value of $X$ can be rewritten in terms of $X^*$
  
-$$P(X\le b)=P(\frac{X-\mu}{\sigma}\le\frac{b-\mu}{\sigma})=P(X^*\le\frac{b-\mu}{\sigma})$$
+\[P(X\le b)=P(\frac{X-\mu}{\sigma}\le\frac{b-\mu}{\sigma})=P(X^*\le\frac{b-\mu}{\sigma})\]
  
 \noindent\textbf{\color{red}Chebychev's Inequality}: For any random variable $X$ with $E(X)=\mu$ and $SD(X)=\sigma$, and any $k>0$,
 
-$$P(|X-\mu|\ge k\sigma)\le\frac{1}{k^2}$$
+\[P(|X-\mu|\ge k\sigma)\le\frac{1}{k^2}\]
 
 \noindent\textbf{\color{red}Addition Rule for Variances}:$Var(X_1+\ldots+X_n)=Var(X_1)+\ldots+Var(X_n)$ if $X_1,\ldots,X_n$ are independent.
 
 \noindent\textbf{\color{red}Square Root Law}: Let $S_n$ be the sum, $\bar{X}_n=\frac{S_n}{n}$ the average, of $n$ independent random variables $X_1,\ldots,X_n$ each with the same distribution as $X$. Then,
 
-$$E(S_n)=nE(X)\qquad\text{and}\qquad SD(S_n)=\sqrt{n}SD(X)$$
+\[E(S_n)=nE(X)\qquad\text{and}\qquad SD(S_n)=\sqrt{n}SD(X)\]
 
-$$E(\bar{X}_n)=E(X)\qquad\text{and}\qquad SD(\bar{X}_n)=\frac{SD(X)}{\sqrt{n}}$$
+\[E(\bar{X}_n)=E(X)\qquad\text{and}\qquad SD(\bar{X}_n)=\frac{SD(X)}{\sqrt{n}}\]
  
 \noindent\textbf{\color{red}Law of Averages/Weak Law of Large Numbers}: Let $X_1,X_2,\ldots$ be a sequence of independent random variables with the same distribution as $X$. Let $\mu=E(X)$ denote the common expected value of $X_i$, and let
 
-$$\bar{X}_n=\frac{X_1+X_2+\ldots+X_n}{n}$$
+\[\bar{X}_n=\frac{X_1+X_2+\ldots+X_n}{n}\]
 
 be the random variable representing the average of $X_1,\ldots,X_n$. Then for every $\epsilon>0$, no matter how small,
 
-$$P(|\bar{X}_n-\mu|<\epsilon)\rightarrow1\quad\text{as}\ n\rightarrow\infty$$
+\[P(|\bar{X}_n-\mu|<\epsilon)\rightarrow1\quad\text{as}\ n\rightarrow\infty\]
 
 \noindent\textbf{\color{red}Normal Approximation (Central Limit Theorem)}: Let $S_n=X_1+\ldots+X_n$ be the sum of $n$ independent random variables each with the same distribution over some finite set of values. For large $n$, the distribution of $S_n$ is approximately normal, with mean $E(S_n)=n\mu$, and standard deviation $SD(S_n)=\sigma\sqrt{n}$, where $\mu=E(X_i)$ and $\sigma=SD(X_i)$. For all $a\le b$
 
-$$P(a\le\frac{S_n-n\mu}{\sigma\sqrt{n}}\le b)\approx\Phi(b)-\Phi(a)$$
+\[P(a\le\frac{S_n-n\mu}{\sigma\sqrt{n}}\le b)\approx\Phi(b)-\Phi(a)\]
 
 \section{Homework 6}
 
@@ -265,9 +265,9 @@ Let $X$ and $Y$ be two discrete random variables with $R_X=\{1,2,3\}$ and $R_Y=\
 
 Since $X$ and $Y$ form a joint PMF, $\underset{(x,y)}{\sum}P(x,y)=1$. 
 
-$$0.04+0.08+0.04+0.2+0.08+0.125+0.25+0.125+c=1$$
+\[0.04+0.08+0.04+0.2+0.08+0.125+0.25+0.125+c=1\]
 
-$$c=0.06$$
+\[c=0.06\]
 }
 
 \indent b. Find the marginal distribution of $X$.
@@ -290,7 +290,7 @@ $$c=0.06$$
 
 {\color{blue}
 
-$$P(X>Y)=0.25$$
+\[P(X>Y)=0.25\]
 
 }
 
@@ -298,7 +298,7 @@ $$P(X>Y)=0.25$$
 
 {\color{blue}
 
-$$P(X\le2,Y\le4)=0.04+0.08+0.2+0.08=0.4$$
+\[P(X\le2,Y\le4)=0.04+0.08+0.2+0.08=0.4\]
 
 }
 
@@ -308,15 +308,15 @@ $$P(X\le2,Y\le4)=0.04+0.08+0.2+0.08=0.4$$
 
 Using the marginal distribution, 
 
-$$P(X=2)=0.405$$
+\[P(X=2)=0.405\]
 
 Then, 
 
-$$P(Y=2,X=2)=0.2$$
+\[P(Y=2,X=2)=0.2\]
 
 Lastly,
 
-$$P(Y=2|X=2)=\frac{0.2}{0.405}=0.49$$
+\[P(Y=2|X=2)=\frac{0.2}{0.405}=0.49\]
 
 }
 
@@ -381,12 +381,12 @@ Let $Z=X+Y$. Then,
 
 Suppose a box contains tickets, each labeled by an integer. Let $X$ and $Y$ be the results of draws at random with replacement from the box: Show that, no matter what the distribution of numbers in the box,
 
-$$P(X+Y\ \text{is even})\ge\frac{1}{2}$$
+\[P(X+Y\ \text{is even})\ge\frac{1}{2}\]
 
 {\color{blue}
 $X+Y$ is even iff $X$ and $Y$ are even or they are both odd. If the fraction of odd numbered tickets is $p$ and the fraction of even numbered tickets is $(1-p)$, this implies that
 
-$$P(X+Y\ \text{is even})\underbrace{p^2}_{\text{both odd}}+\underbrace{(1-p)^2}_{\text{both even}}$$
+\[P(X+Y\ \text{is even})\underbrace{p^2}_{\text{both odd}}+\underbrace{(1-p)^2}_{\text{both even}}\]
 
 If $f(p)=p^2+(1-p)^2=1-2p+p^2=2p^2-2p+1$, then $f'(p)=4p-2$, which is increasing in $p$ and has a root at $\frac{1}{2}$, so the minimum value of $f$ is $f\left(\frac{1}{2}\right)=2\cdot\left(\frac{1}{2}\right)^2-2\cdot(\frac{1}{2})+1=\frac{1}{2}$. Thus, $P(X+Y\ \text{is even})\ge\frac{1}{2}$ in all cases.
 
@@ -508,7 +508,7 @@ Suppose all the numbers in a list of $100$ numbers are nonnegative, and that the
 
 We use Markov's inequality. Let $X$ be a number drawn at random from the list. We know $E(X)=2$. Hence,
 
-$$P(X>8)\le\frac{E(X)}{8}=\frac{2}{8}=\frac{1}{4}$$
+\[P(X>8)\le\frac{E(X)}{8}=\frac{2}{8}=\frac{1}{4}\]
 
 so at most $\frac{1}{4}$ of the $100$ numbers, i.e., $25$ of the numbers in the list, can be greater than $8$.
 
@@ -520,7 +520,7 @@ Suppose $E(X^2)=3$, $E(Y^2)=4$, $E(XY)=2$. Find $E[(X+Y)^2]$.
 
 {\color{blue}
 
-$$E[(X+Y)^2]=E[X^2+2XY+Y^2]=E[X^2]+2E[XY]+E[Y^2]=3+2\cdot2+3=11$$
+\[E[(X+Y)^2]=E[X^2+2XY+Y^2]=E[X^2]+2E[XY]+E[Y^2]=3+2\cdot2+3=11\]
 
 }
 
@@ -553,11 +553,11 @@ A building has $10$ floors above the basement. If $12$ people get into an elevat
 
 Let $X$ be the number of floors at which at least one person wants to get out. We want to find $E(X)$, but computing $P(X=x)$ for $x=1,2,\ldots,10$ is difficult. However, we not need the distribution of $X$. Instead, consider the indicator random variable
 
-$$I_j=\begin{cases}1&\text{if at least one person watns to get out at floor}\ j\\0&\text{otherwise}\end{cases}$$
+\[I_j=\begin{cases}1&\text{if at least one person watns to get out at floor}\ j\\0&\text{otherwise}\end{cases}\]
 
 Then, $X=\underset{j=1}{\overset{10}{\sum}}I_j$. The expected value of an indicator function is the probaiblity of the set on which the indicator is $1$. Thus,
 
-$$E(X)=E(\underset{j=1}{\overset{10}{\sum}}I_j)=\underset{j=1}{\overset{10}{E(I_j)}}=\underset{j=1}{\overset{10}{\sum}}\left[1-\left(\frac{9}{10}\right)\right]\approx7.176$$
+\[E(X)=E(\underset{j=1}{\overset{10}{\sum}}I_j)=\underset{j=1}{\overset{10}{E(I_j)}}=\underset{j=1}{\overset{10}{\sum}}\left[1-\left(\frac{9}{10}\right)\right]\approx7.176\]
 
 }
 
@@ -629,7 +629,7 @@ Let $X$ be a discrete random variable with $R_X=\{0,1,2,3\}$ and the following d
 
 {\color{blue}
 
-$$E(X)=0\cdot0.1+1\cdot0.4+2\cdot0.3+3\cdot0.2=1.6$$
+\[E(X)=0\cdot0.1+1\cdot0.4+2\cdot0.3+3\cdot0.2=1.6\]
 
 }
 
@@ -645,9 +645,9 @@ First, calculate $E(X^2)=0^2\cdot0.1+1^2\cdot0.4+2^2\cdot0.3+3^2\cdot0.2=3.4$. T
 
 {\color{blue}
 
-$$E(Y)=E\left[(X-2)^2\right]=(0-2)^2\cdot0.1+(1-2)^2\cdot0.4+(2-2)^2\cdot0.4+(3-2)^2\cdot0.2$$
+\[E(Y)=E\left[(X-2)^2\right]=(0-2)^2\cdot0.1+(1-2)^2\cdot0.4+(2-2)^2\cdot0.4+(3-2)^2\cdot0.2\]
 
-$$4\cdot0.1+1\cdot0.4+0\cdot0.3+1cdot0.2=1$$
+\[4\cdot0.1+1\cdot0.4+0\cdot0.3+1cdot0.2=1\]
 
 }
 
@@ -661,7 +661,7 @@ Suppose the IQ scores of a million individuals have a mean of $100$ and a $SD$ o
 
 Let $X$ denote the IQ score. Then, using Chebychev's inequality we have
 
-$$P(X\ge130)=P(X-100\ge30)=P(X-\mu\ge3\sigma)\le P(|X-\mu|\ge3\sigma)\le\frac{1}{9}$$
+\[P(X\ge130)=P(X-100\ge30)=P(X-\mu\ge3\sigma)\le P(|X-\mu|\ge3\sigma)\le\frac{1}{9}\]
 
 Thus, among the $1$ million individuals, there are at most $111112$ scores exceeding $130$.
 
@@ -681,9 +681,9 @@ Assuming the distribution is symmetric about $100$, one half of the number calcu
 
 Assuming that the distribution is approximately normal, we have
 
-$$P(X\ge130)=1-P(X\le130)\approx1-\Phi(\frac{130-100}{10})$$
+\[P(X\ge130)=1-P(X\le130)\approx1-\Phi(\frac{130-100}{10})\]
 
-$$=1-\Phi(3)=1-0.9987=0.0013$$
+\[=1-\Phi(3)=1-0.9987=0.0013\]
 
 Thus, the number of scores exceeding $130$ is at most $1300$.
 
@@ -711,17 +711,17 @@ Calculate the standard deviation of the amount paid under the policy (round to t
 
 Let $X$ denote the amount paid under the policy. We first calculate $E(X)$ and $E(X^2)$.
 
-$$E(X)=0\cdot(0.06+0.18+0.26+0.22)+300\cdot0.14+600\cdot0.06+700\cdot(0.04+0.04)=134$$
+\[E(X)=0\cdot(0.06+0.18+0.26+0.22)+300\cdot0.14+600\cdot0.06+700\cdot(0.04+0.04)=134\]
 
-$$E(X^2)=0^2\cdot(0.06+0.18+0.26+0.22)+300^2\cdot0.14$$
+\[E(X^2)=0^2\cdot(0.06+0.18+0.26+0.22)+300^2\cdot0.14\]
 
-$$+600^2\cdot0.06+700^2\cdot(0.04+0.04)=73400$$
+\[+600^2\cdot0.06+700^2\cdot(0.04+0.04)=73400\]
 
 Thus,
 
-$$Var(X)=E(X^2)-[E(X)]^2=73400-134^2=5544$$
+\[Var(X)=E(X^2)-[E(X)]^2=73400-134^2=5544\]
 
-$$SD(X)=\sqrt{55444}\approx235$$
+\[SD(X)=\sqrt{55444}\approx235\]
 
 }
 
@@ -747,15 +747,15 @@ Calculate the approximate probability that the total calims on $76$ independent 
 
 First, let $X$ denote the claim amount. Then,
 
-$$E(X)=0\cdot0.5+1\cdot0.2+2\cdot0.3=0.8$$
+\[E(X)=0\cdot0.5+1\cdot0.2+2\cdot0.3=0.8\]
 
-$$E(X^2)=0^2\cdot0.5+1^2\cdot0.2+2^2\cdot0.3=1.4$$
+\[E(X^2)=0^2\cdot0.5+1^2\cdot0.2+2^2\cdot0.3=1.4\]
 
-$$Var(X)=E(X^2)-[E(X)]^2=1.4-0.64=0.76$$
+\[Var(X)=E(X^2)-[E(X)]^2=1.4-0.64=0.76\]
 
 The premium on a policy is $125\%$ of $0.8$, which is $1$. Thus, the total premium on $76$ policies is $76$. Now, let $Y$ be the total claims on $76$ policies. By the central limit theorem, $Y$ has approximately a normal distirubtion with mean $76\cdot0.8=60.8$ and variance $76\cdot0.76=57.76$. Hence,
 
-$$P(Y>76)\approx1-\Phi(\frac{76-60.8}{\sqrt{57.76}})=1-\Phi(2)=1-0.9772=0.0228$$
+\[P(Y>76)\approx1-\Phi(\frac{76-60.8}{\sqrt{57.76}})=1-\Phi(2)=1-0.9772=0.0228\]
 
 }
 
@@ -767,9 +767,9 @@ Let $X$ and $Y$ be two independent random variables. Suppose we know that $var(2
 
 By independence we have
 
-$$6=Var(2X-Y)=Var(2X)+Var(-Y)=4Var(X)+Var(Y)$$
+\[6=Var(2X-Y)=Var(2X)+Var(-Y)=4Var(X)+Var(Y)\]
 
-$$9=Var(X+2Y)=Var(X)+Var(2Y)=Var(X)+4Var(Y)$$
+\[9=Var(X+2Y)=Var(X)+Var(2Y)=Var(X)+4Var(Y)\]
 
 By solving for $Var(X)$ and $Var(Y)$, we obtain $Var(X)=1$ and $Var(Y)=2$.
 
@@ -783,7 +783,7 @@ let $X$, $Y$, and $Z$ be independent indentically distributed random variables w
 
 {\color{blue}
 
-$$E(2X+3Y)=E(2X)+E(3Y)=2E(X)+3E(Y)=5$$
+\[E(2X+3Y)=E(2X)+E(3Y)=2E(X)+3E(Y)=5\]
 
 }
 
@@ -793,7 +793,7 @@ $$E(2X+3Y)=E(2X)+E(3Y)=2E(X)+3E(Y)=5$$
 
 Using the fact that $X$, $Y$, and $Z$ are independent, we have
 
-$$Var(2X+3Y)=Var(2X)+Var(3Y)=4Var(X)+YVar(Y)=26$$
+\[Var(2X+3Y)=Var(2X)+Var(3Y)=4Var(X)+YVar(Y)=26\]
 
 }
 
@@ -803,7 +803,7 @@ $$Var(2X+3Y)=Var(2X)+Var(3Y)=4Var(X)+YVar(Y)=26$$
 
 Using the fact that $X$, $Y$, and $Z$ are independent, we have
 
-$$E(XYZ)=E(X)E(Y)E(Z)=1$$
+\[E(XYZ)=E(X)E(Y)E(Z)=1\]
 
 }
 
@@ -826,7 +826,7 @@ $$E(XYZ)=E(X)E(Y)E(Z)=1$$
 
 \indent\indent a. Show that if $X$ and $Y$ are independent random variables, then
 
-$$Var(X-Y)=Var(X+Y)$$
+\[Var(X-Y)=Var(X+Y)\]
 
 {\color{blue}
 
@@ -841,7 +841,7 @@ By the addition rule for the variance of independent random variables, we have
 
 \indent\indent b. Let $D_1$ and $D_2$ represent two draws at random with replacement from a population, with $E(D_1)=10$ and $SD(D_1)=2$. Find a number $c$ so that
 
-$$P(|D_1-D_2|<c)\ge99\%$$
+\[P(|D_1-D_2|<c)\ge99\%\]
 
 {\color{blue}
 
@@ -856,7 +856,7 @@ Let $X=D_1-D_2$. Since $D_1$ and $D_2$ are two draws at random with replacement 
 
 Using Chebychev's inequality this can be expressed as
 
-$$P(|X-0|\ge k\sqrt{8})\le\frac{1}{k^2}$$
+\[P(|X-0|\ge k\sqrt{8})\le\frac{1}{k^2}\]
 
 with $k=10$. Thus, $c=10\sqrt{8}$.
 
@@ -896,7 +896,7 @@ Find $m$.
 
 The number $m$ is the mode of the $Binomial(2500, 0.001)$ distribution. As $(n+1)p=2501\cdot0.001=2.501$ is a non-integer, we have
 
-$$m=\lfloor(n+1)p\rfloor=\lfloor2.501\rfloor=2$$
+\[m=\lfloor(n+1)p\rfloor=\lfloor2.501\rfloor=2\]
 
 }
 
@@ -918,7 +918,7 @@ Find the Poisson approimation for $P(S=2)$ and enter your answer as a decimal nu
 
 Using $\mu=np=2500\cdot0.001=2.5$, we get
 
-$$P(S=2)\approx\frac{e^{-2.5}(2.5)^2}{2!}\approx0.2565$$
+\[P(S=2)\approx\frac{e^{-2.5}(2.5)^2}{2!}\approx0.2565\]
 
 }
 
@@ -944,13 +944,13 @@ Determine the value of $a$.
 
 We need 
 
-$$\frac{a-1}{20}+\frac{2a-4}{20}+\frac{3a-9}{20}+\frac{4a-16}{20}=1$$
+\[\frac{a-1}{20}+\frac{2a-4}{20}+\frac{3a-9}{20}+\frac{4a-16}{20}=1\]
 
-$$\Leftrightarrow\frac{10a-30}{20}=1$$
+\[\Leftrightarrow\frac{10a-30}{20}=1\]
 
-$$\Leftrightarrow10a=50$$
+\[\Leftrightarrow10a=50\]
 
-$$\Leftrightarrow a=5$$
+\[\Leftrightarrow a=5\]
 
 }
 
@@ -958,7 +958,7 @@ $$\Leftrightarrow a=5$$
 
 Suppose that $X$ and $Y$ are two discrete random variables with
 
-$$R_{XY}=\{(1,1),(1,2),(2,1),(2,2)\}$$
+\[R_{XY}=\{(1,1),(1,2),(2,1),(2,2)\}\]
 
 and the following joint probability distribution:
 
@@ -991,7 +991,7 @@ Two fair dice are rolled. Let $X$ be the number on first die and let $Y$ be the 
 
 Since $X$ and $Y$ are independent random variables, we have
 
-$$P(X=4, Y=6)=P(X=4)\cdot P(Y=6)=\frac{1}{6}\cdot\frac{1}{6}=\frac{1}{36}$$
+\[P(X=4, Y=6)=P(X=4)\cdot P(Y=6)=\frac{1}{6}\cdot\frac{1}{6}=\frac{1}{36}\]
 
 }
 
@@ -1001,7 +1001,7 @@ $$P(X=4, Y=6)=P(X=4)\cdot P(Y=6)=\frac{1}{6}\cdot\frac{1}{6}=\frac{1}{36}$$
 
 Since $X$ and $Y$ are independent random variables, we have
 
-$$P(X>4|Y=1)=P(X>4)=\frac{1}{6}+\frac{1}{6}=\frac{2}{6}=\frac{1}{3}$$
+\[P(X>4|Y=1)=P(X>4)=\frac{1}{6}+\frac{1}{6}=\frac{2}{6}=\frac{1}{3}\]
 
 }
 
@@ -1033,7 +1033,7 @@ Suppose $X$ is a random variable with $E(X)=2$.
 
 {\color{blue}
 
-$$E(Y)=E(2X+2)=2E(X)+2=2\cdot2+2=6$$
+\[E(Y)=E(2X+2)=2E(X)+2=2\cdot2+2=6\]
 
 }
 
@@ -1041,7 +1041,7 @@ $$E(Y)=E(2X+2)=2E(X)+2=2\cdot2+2=6$$
 
 {\color{blue}
 
-$$E(Y)=E(2X-1)=2E(X)-1=2\cdot2-1=3$$
+\[E(Y)=E(2X-1)=2E(X)-1=2\cdot2-1=3\]
 
 }
 
@@ -1063,7 +1063,7 @@ Calculate $E(X)$ and enter it as a fraction.
 
 {\color{blue}
 
-$$E(X)=1\cdot\frac{11}{36}+2\cdot\frac{9}{36}+3\cdot\frac{7}{36}+4\cdot\frac{5}{36}+5\cdot\frac{3}{36}+6\cdot\frac{1}{36}=\frac{91}{36}$$
+\[E(X)=1\cdot\frac{11}{36}+2\cdot\frac{9}{36}+3\cdot\frac{7}{36}+4\cdot\frac{5}{36}+5\cdot\frac{3}{36}+6\cdot\frac{1}{36}=\frac{91}{36}\]
 
 }
 
@@ -1129,7 +1129,7 @@ A random variable $X$ has expectation $2$ and variance $1$. Calculate $E(X^2)$.
 
 {\color{blue}
 
-$$E(X^2)=Var(X)+[E(X)]^2=1+2^2=5$$
+\[E(X^2)=Var(X)+[E(X)]^2=1+2^2=5\]
 
 }
 \end{document}
